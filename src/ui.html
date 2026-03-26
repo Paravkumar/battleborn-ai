@@ -4,167 +4,177 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customer Support AI</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #0f1115;
-            --chat-bg: rgba(25, 28, 36, 0.6);
-            --user-bubble: linear-gradient(135deg, #6366f1, #8b5cf6);
-            --agent-bubble: rgba(255, 255, 255, 0.05);
-            --accent: #8b5cf6;
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --border: rgba(255, 255, 255, 0.1);
+            /* Greyish bright cyan */
+            --bg-base: #d2dee2; 
+            --cyan-primary: #00bcd4;
+            --cyan-light: #26c6da;
+            --cyan-dark: #00838f;
+            --cyan-deep: #006064;
+            --text-primary: #2d3f44;
+            --text-secondary: #4a656b;
+            
+            /* Skeuomorphic Variables adjusted for new base */
+            --shadow-outer: 12px 12px 24px #b9c6ca, -12px -12px 24px #ebf6fa;
+            --shadow-inner: inset 5px 5px 10px #b9c6ca, inset -5px -5px 10px #ebf6fa;
+            --btn-gradient: linear-gradient(135deg, #26c6da, #00acc1);
         }
         
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            background-image: 
-                radial-gradient(circle at 15% 50%, rgba(99, 102, 241, 0.15), transparent 25%),
-                radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.15), transparent 25%);
+            background-color: var(--bg-base);
             color: var(--text-primary);
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 10%, #ebf6fa 0%, transparent 40%),
+                radial-gradient(circle at 90% 90%, #b9c6ca 0%, transparent 40%);
         }
 
         .chat-container {
             width: 100%;
             max-width: 800px;
             height: 90vh;
-            background: var(--chat-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--border);
-            border-radius: 24px;
+            background: var(--bg-base);
+            border-radius: 30px;
             display: flex;
             flex-direction: column;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            box-shadow: var(--shadow-outer);
             overflow: hidden;
+            border: 1px solid #ebf6fa;
         }
 
         .header {
             padding: 24px;
-            border-bottom: 1px solid var(--border);
+            background: linear-gradient(180deg, #ebf6fa 0%, var(--bg-base) 100%);
+            border-bottom: 2px solid #ebf6fa;
             display: flex;
             align-items: center;
             gap: 16px;
+            box-shadow: 0 5px 15px -3px rgba(0, 188, 212, 0.1);
+            z-index: 10;
         }
 
         .avatar-glow {
             position: relative;
-            width: 48px;
-            height: 48px;
-        }
-
-        .avatar-glow::before {
-            content: '';
-            position: absolute;
-            inset: -4px;
-            background: linear-gradient(45deg, #6366f1, #8b5cf6, #ec4899);
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            filter: blur(8px);
-            opacity: 0.8;
-            animation: pulse-glow 3s linear infinite;
-        }
-
-        .avatar {
-            position: relative;
-            width: 48px;
-            height: 48px;
-            background: #1e2128;
-            border-radius: 50%;
+            background: var(--btn-gradient);
+            box-shadow: 6px 6px 12px rgba(0, 151, 167, 0.25), -6px -6px 12px #ebf6fa, inset 2px 2px 4px rgba(255,255,255,0.4);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 600;
-            font-size: 1.2rem;
-            color: #fff;
-            z-index: 1;
+            border: 4px solid var(--bg-base);
+            animation: pulse-border 2.5s infinite alternate;
+        }
+
+        .avatar {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #ffffff;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
         }
 
         .header-info h1 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 4px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--cyan-deep);
+            text-shadow: 1px 1px 0px #ebf6fa;
+            margin-bottom: 2px;
+            letter-spacing: -0.5px;
         }
 
         .header-info p {
-            font-size: 0.875rem;
+            font-size: 0.95rem;
             color: var(--text-secondary);
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
+            font-weight: 600;
         }
 
         .status-dot {
-            width: 8px;
-            height: 8px;
-            background: #22c55e;
+            width: 14px;
+            height: 14px;
+            background: #00e676;
             border-radius: 50%;
-            box-shadow: 0 0 8px #22c55e;
+            box-shadow: inset 2px 2px 4px rgba(255,255,255,0.8), inset -2px -2px 4px rgba(0,0,0,0.3), 0 0 10px rgba(0, 230, 118, 0.7);
+            border: 1px solid #b9f6ca;
         }
 
         .messages {
             flex: 1;
-            padding: 24px;
+            padding: 30px;
             overflow-y: auto;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 24px;
             scroll-behavior: smooth;
         }
 
         .messages::-webkit-scrollbar {
-            width: 6px;
+            width: 10px;
         }
 
         .messages::-webkit-scrollbar-thumb {
-            background: var(--border);
-            border-radius: 6px;
+            background: var(--cyan-light);
+            border-radius: 10px;
+            border: 2px solid var(--bg-base);
+            box-shadow: inset 1px 1px 2px rgba(255,255,255,0.4);
         }
 
         .message {
             max-width: 80%;
-            padding: 16px 20px;
+            padding: 18px 24px;
             border-radius: 20px;
-            line-height: 1.5;
-            font-size: 0.95rem;
+            line-height: 1.6;
+            font-size: 1rem;
+            font-weight: 500;
             animation: slide-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
             opacity: 0;
             transform: translateY(10px);
+            position: relative;
         }
 
         .message.user {
-            background: var(--user-bubble);
+            background: var(--btn-gradient);
+            color: #ffffff;
             align-self: flex-end;
             border-bottom-right-radius: 4px;
-            box-shadow: 0 8px 16px -4px rgba(99, 102, 241, 0.3);
+            box-shadow: 6px 6px 12px rgba(0, 188, 212, 0.25), inset 2px 2px 4px rgba(255, 255, 255, 0.5), inset -2px -2px 4px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--cyan-light);
+            text-shadow: 0px 1px 1px rgba(0,0,0,0.1);
         }
 
         .message.agent {
-            background: var(--agent-bubble);
-            border: 1px solid var(--border);
+            background: #dce7ea;
+            color: var(--text-primary);
             align-self: flex-start;
             border-bottom-left-radius: 4px;
+            box-shadow: 4px 4px 8px #b9c6ca, -4px -4px 8px #ebf6fa;
+            border: 1px solid rgba(0, 188, 212, 0.15);
         }
 
-        /* Markdown formatting for agent responses */
         .message.agent p { margin-bottom: 0.75em; }
         .message.agent p:last-child { margin-bottom: 0; }
-        .message.agent strong { color: #fff; font-weight: 600; }
+        .message.agent strong { color: var(--cyan-deep); font-weight: 700; background: var(--bg-base); padding: 0 4px; border-radius: 4px;}
         .message.agent ol, .message.agent ul { margin-left: 1.2em; margin-bottom: 0.75em; }
         .message.agent li { margin-bottom: 0.3em; }
 
         .input-area {
             padding: 24px;
-            background: rgba(15, 17, 21, 0.4);
-            border-top: 1px solid var(--border);
+            background: var(--bg-base);
+            border-top: 2px solid #ebf6fa;
+            box-shadow: 0 -8px 16px rgba(0, 188, 212, 0.03);
+            z-index: 10;
         }
 
         .input-wrapper {
@@ -175,33 +185,36 @@
 
         input {
             width: 100%;
-            padding: 18px 60px 18px 24px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border);
+            padding: 22px 80px 22px 30px;
+            background: var(--bg-base);
+            border: 1px solid #ebf6fa;
             border-radius: 50px;
-            color: var(--text-primary);
-            font-size: 1rem;
+            color: var(--cyan-deep);
+            font-size: 1.1rem;
+            font-weight: 600;
             font-family: 'Inter', sans-serif;
+            box-shadow: var(--shadow-inner);
             transition: all 0.3s ease;
             outline: none;
         }
 
         input:focus {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(139, 92, 246, 0.5);
-            box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+            box-shadow: inset 8px 8px 16px #b9c6ca, inset -8px -8px 16px #ebf6fa;
+            background: #d8e3e6;
         }
 
         input::placeholder {
-            color: var(--text-secondary);
+            color: var(--cyan-dark);
+            opacity: 0.6;
+            font-weight: 500;
         }
 
         .send-btn {
             position: absolute;
-            right: 8px;
-            width: 44px;
-            height: 44px;
-            background: var(--user-bubble);
+            right: 12px;
+            width: 52px;
+            height: 52px;
+            background: var(--btn-gradient);
             border: none;
             border-radius: 50%;
             color: white;
@@ -209,33 +222,34 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 4px 4px 8px rgba(0, 151, 167, 0.25), -4px -4px 8px #ebf6fa, inset 2px 2px 4px rgba(255,255,255,0.4);
+            transition: all 0.15s ease;
         }
 
-        .send-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
+        .send-btn:active {
+            box-shadow: inset 4px 4px 8px rgba(0, 151, 167, 0.4), inset -4px -4px 8px rgba(255,255,255,0.4);
+            transform: scale(0.96) translateY(2px);
         }
 
         .send-btn:disabled {
-            background: var(--border);
+            background: var(--bg-base);
             cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
-            opacity: 0.5;
+            box-shadow: var(--shadow-inner);
+            color: #b9c6ca;
+            border: 1px solid #ebf6fa;
         }
 
-        /* Loading indicator */
         .typing-indicator {
             display: none;
-            padding: 16px 20px;
-            background: var(--agent-bubble);
-            border: 1px solid var(--border);
+            padding: 16px 24px;
+            background: #dce7ea;
             border-radius: 20px;
             border-bottom-left-radius: 4px;
             align-self: flex-start;
-            gap: 4px;
+            gap: 8px;
             align-items: center;
+            box-shadow: 4px 4px 8px #b9c6ca, -4px -4px 8px #ebf6fa;
+            border: 1px solid rgba(0, 188, 212, 0.15);
         }
 
         .typing-indicator.active {
@@ -243,10 +257,11 @@
         }
 
         .dot {
-            width: 6px;
-            height: 6px;
-            background: var(--text-secondary);
+            width: 10px;
+            height: 10px;
+            background: var(--cyan-primary);
             border-radius: 50%;
+            box-shadow: inset 2px 2px 4px rgba(255,255,255,0.8), inset -2px -2px 4px rgba(0,0,0,0.1), 0 2px 4px rgba(0,188,212,0.2);
             animation: bounce 1.4s infinite ease-in-out both;
         }
 
@@ -262,9 +277,9 @@
             40% { transform: scale(1); }
         }
 
-        @keyframes pulse-glow {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        @keyframes pulse-border {
+            0% { box-shadow: 0 0 0 0px rgba(0, 188, 212, 0.2), 6px 6px 12px rgba(0, 151, 167, 0.2), -6px -6px 12px #ebf6fa; }
+            100% { box-shadow: 0 0 0 10px rgba(0, 188, 212, 0), 6px 6px 12px rgba(0, 151, 167, 0.2), -6px -6px 12px #ebf6fa; }
         }
     </style>
 </head>
@@ -295,7 +310,7 @@
             <form id="chat-form" class="input-wrapper">
                 <input type="text" id="user-input" placeholder="Type your issue..." autocomplete="off" required>
                 <button type="submit" class="send-btn" id="send-btn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="22" y1="2" x2="11" y2="13"></line>
                         <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                     </svg>
@@ -311,7 +326,6 @@
         const typingIndicator = document.getElementById('typing-indicator');
         const sendBtn = document.getElementById('send-btn');
 
-        // Parse basic markdown formatting (paragraphs, bold text, numbers)
         function parseBasicMarkdown(text) {
             let parsed = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
             parsed = parsed.replace(/\n\n/g, '</p><p>');
@@ -343,13 +357,11 @@
             const message = input.value.trim();
             if (!message) return;
 
-            // Render user message
             appendMessage(message, 'user');
             input.value = '';
             input.disabled = true;
             sendBtn.disabled = true;
 
-            // Show pulsing loading dots
             typingIndicator.classList.add('active');
             scrollToBottom();
 
@@ -364,10 +376,8 @@
 
                 const data = await response.json();
                 
-                // Hide loader
                 typingIndicator.classList.remove('active');
 
-                // Extract purely the agent's textual response as requested
                 const finalResponse = data.final_response || "Sorry, the agent did not return a response.";
                 
                 appendMessage(finalResponse, 'agent');
