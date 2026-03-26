@@ -1,4 +1,4 @@
-# Ticket Agent MVP
+# Battleborn Customer Support AI
 
 This repository contains a first prototype for the customer ticket resolution workflow domain. The final stable path in this repo is RAG-first with `llama3.1:8b` in Ollama:
 
@@ -20,6 +20,23 @@ This repository contains a first prototype for the customer ticket resolution wo
 - SFT export command to convert a run log into a training example
 - Interactive chat mode that keeps the conversation going until resolution, escalation, or customer wait-state
 - Markdown demo report generation from recent execution logs
+
+## A2A template adaptation
+
+This project is now adapted to an A2A template-style structure.
+
+- Existing runtime remains in `src/ticket_agent/`.
+- New A2A wrapper package is in `src/a2a_agent/`.
+- A2A entrypoint: `a2a-ticket-agent`
+- Docker files added: `Dockerfile`, `docker-compose.yml`
+
+Run the A2A server:
+
+```powershell
+pip install -e .
+$env:OPENAI_API_KEY = "your-key"
+a2a-ticket-agent --host localhost --port 5000
+```
 
 ## Quick start
 

@@ -9,8 +9,14 @@ description = "Hackathon MVP for customer ticket resolution with Ollama-backed p
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+  "a2a-sdk[http-server]>=0.3.0",
+  "click>=8.1.8",
+  "httpx>=0.28.1",
+  "openai>=1.57.0",
   "ollama>=0.4.7",
   "pydantic>=2.7,<3.0",
+  "python-dotenv>=1.1.0",
+  "uvicorn>=0.34.2",
 ]
 
 [project.optional-dependencies]
@@ -26,6 +32,7 @@ train = [
 
 [project.scripts]
 ticket-agent = "ticket_agent.cli:main"
+a2a-ticket-agent = "a2a_agent.__main__:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
