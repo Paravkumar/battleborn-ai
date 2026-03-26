@@ -1,0 +1,12 @@
+[
+  {
+    "article_id": "KB-100",
+    "title": "Base article",
+    "issue_type": "integration",
+    "information_type": "product",
+    "keywords": ["webhook"],
+    "summary": "Base summary",
+    "resolution_steps": ["Check webhook logs."],
+    "customer_reply_template": "Please check the webhook logs."
+  }
+]

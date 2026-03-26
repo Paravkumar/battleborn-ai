@@ -1,0 +1,18 @@
+[
+  {
+    "ticket_id": "TICK-3901",
+    "customer_id": "CUST-3901",
+    "subject": "Need help urgently",
+    "body": "This is bad and not working.",
+    "priority": "high",
+    "status": "pending_customer",
+    "issue_type": "unknown",
+    "resolution_summary": "Please tell me what you were trying to do, which part of the product or workflow this belongs to, and what happened instead of the expected result. If you saw an exact error or thi",
+    "customer_message_history": [],
+    "pending_customer_replies": [],
+    "response_history": [
+      "Please tell me what you were trying to do, which part of the product or workflow this belongs to, and what happened instead of the expected result. If you saw an exact error or this started after a recent change, include that too."
+    ],
+    "tool_failures": {}
+  }
+]
