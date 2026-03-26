@@ -3,10 +3,9 @@ services:
     build: .
     container_name: battleborn-customer-support-ai
     environment:
-      - OPENAI_API_KEY=your-openai-api-key-here
-      - CLOUD_MODEL=gpt-4.1-mini
-      - OLLAMA_HOST=http://host.docker.internal:11434
-      - OLLAMA_MODEL=qwen2.5:7b-instruct
+      - NVIDIA_API_KEY=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
+      - CLOUD_MODEL=nvidia/nemotron-3-nano-30b-a3b
+      - KB_PATH=data/knowledge_base.json
     stdin_open: true
     ports:
       - "5000:5000"
@@ -17,4 +16,3 @@ services:
 networks:
   agents-net:
     external: true
-

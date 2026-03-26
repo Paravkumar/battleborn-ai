@@ -1,6 +1,7 @@
 import inspect
 import json
 import logging
+import os
 from typing import Any
 
 from a2a.server.agent_execution import AgentExecutor
@@ -15,12 +16,12 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
 
-class OpenAIAgentExecutor(AgentExecutor):
+class NvidiaAgentExecutor(AgentExecutor):
     def __init__(self, card: AgentCard, tools: dict[str, Any], api_key: str, system_prompt: str):
         self._card = card
         self.tools = tools
-        self.client = AsyncOpenAI(api_key=api_key)
-        self.model = "gpt-4.1-mini"
+        self.client = AsyncOpenAI(api_key=api_key, base_url="https://integrate.api.nvidia.com/v1")
+        self.model = os.getenv("CLOUD_MODEL", "nvidia/nemotron-3-nano")
         self.system_prompt = system_prompt
 
     def _extract_function_schema(self, func: Any) -> dict[str, Any]:
@@ -61,9 +62,9 @@ class OpenAIAgentExecutor(AgentExecutor):
                 max_tokens=2500,
             )
             message = response.choices[0].message
-            messages.append({"role": "assistant", "content": message.content, "tool_calls": message.tool_calls})
+            messages.append({"role": "assistant", "content": message.content, "tool_calls": getattr(message, "tool_calls", None)})
 
-            if not message.tool_calls:
+            if getattr(message, "tool_calls", None) is None or not message.tool_calls:
                 if message.content:
                     await task_updater.add_artifact([TextPart(text=message.content)])
                 await task_updater.complete()
@@ -83,6 +84,7 @@ class OpenAIAgentExecutor(AgentExecutor):
                     {
                         "role": "tool",
                         "tool_call_id": tool_call.id,
+                        "name": function_name,
                         "content": json.dumps(result) if isinstance(result, dict) else str(result),
                     }
                 )
@@ -106,4 +108,3 @@ class OpenAIAgentExecutor(AgentExecutor):
 
     async def cancel(self, context: RequestContext, event_queue: EventQueue):
         raise ServerError(error=UnsupportedOperationError())
-
