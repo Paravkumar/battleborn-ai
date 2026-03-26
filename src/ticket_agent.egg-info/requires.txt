@@ -1,0 +1,13 @@
+ollama>=0.4.7
+pydantic<3.0,>=2.7
+
+[dev]
+pytest>=8.0
+
+[train]
+accelerate>=0.34
+bitsandbytes>=0.43
+datasets>=2.20
+peft>=0.12
+transformers>=4.45
+trl>=0.10

@@ -1,0 +1,58 @@
+[
+  {
+    "ticket_id": "TICK-1001",
+    "customer_id": "CUST-001",
+    "subject": "Cannot log in after too many password attempts",
+    "body": "I was locked out after entering the wrong password a few times. Please help me get back into my account today.",
+    "priority": "high",
+    "status": "resolved",
+    "issue_type": "access_management",
+    "resolution_summary": "Thanks for confirming the issue is resolved. I'm marking this ticket as resolved now. If the problem returns, reply here and we can reopen it.",
+    "customer_message_history": [
+      "I followed the reset link and I can sign in again now. Thanks."
+    ],
+    "pending_customer_replies": [],
+    "response_history": [
+      "Priority noted. Please use the password reset link tied to your registered email, complete the reset within 15 minutes, and then try signing in again. If the login still fails after the reset, reply here and we will continue with the next account security checks.",
+      "Thanks for confirming the issue is resolved. I'm marking this ticket as resolved now. If the problem returns, reply here and we can reopen it.",
+      "Thanks for confirming the issue is resolved. I'm marking this ticket as resolved now. If the problem returns, reply here and we can reopen it.",
+      "Thanks for confirming the issue is resolved. I'm marking this ticket as resolved now. If the problem returns, reply here and we can reopen it.",
+      "Thanks for confirming the issue is resolved. I'm marking this ticket as resolved now. If the problem returns, reply here and we can reopen it."
+    ],
+    "tool_failures": {}
+  },
+  {
+    "ticket_id": "TICK-1002",
+    "customer_id": "CUST-002",
+    "subject": "Why was I charged twice on my invoice?",
+    "body": "I paid invoice INV-2231 yesterday and now I see a second charge on my card. I need a clear explanation and next steps.",
+    "priority": "high",
+    "status": "open",
+    "issue_type": null,
+    "resolution_summary": null,
+    "customer_message_history": [],
+    "pending_customer_replies": [
+      "I checked the card activity. Only one charge settled and the second one is still a pending authorization."
+    ],
+    "response_history": [],
+    "tool_failures": {
+      "search_kb": 1
+    }
+  },
+  {
+    "ticket_id": "TICK-1003",
+    "customer_id": "CUST-003",
+    "subject": "Nightly warehouse allocation batch produces invalid serial mappings",
+    "body": "Our internal warehouse batch started producing invalid serial mappings after midnight. This is a custom workflow and we do not have a known runbook for it. We need a root cause today.",
+    "priority": "urgent",
+    "status": "escalated",
+    "issue_type": "unknown",
+    "resolution_summary": "Escalation required. Classification: unknown / unknown (0.20 confidence). Latest customer message: \"Our internal warehouse batch started producing invalid serial mappings after midnight. This is a custom workflow and we do not have a known runbook for it. We need a root cause today.\". KB attempts: \"Nightly warehouse allocation batch produces invalid serial mappings Our internal warehouse batch started producing inval\" -> No grounded KB article matched the query. | \"unknown unknown Nightly warehouse allocation batch produces invalid serial mappings\" -> No grounded KB article matched the query. | \"Nightly warehouse allocation batch produces invalid serial mappings internal warehouse batch started\" -> No grounded KB article matched the query.. Escalation trigger: search_kb failed with 'No grounded KB article matched the query.'.",
+    "customer_message_history": [],
+    "pending_customer_replies": [],
+    "response_history": [
+      "I'm escalating this to a human support specialist now because this needs hands-on review beyond the supported automated steps. They'll continue from the details already captured in this ticket."
+    ],
+    "tool_failures": {}
+  }
+]

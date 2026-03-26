@@ -1,0 +1,2 @@
+[console_scripts]
+ticket-agent = ticket_agent.cli:main
