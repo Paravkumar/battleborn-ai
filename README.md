@@ -30,8 +30,8 @@ The workflow engine now enforces:
 
 ## Environment Variables
 
-- `OPENAI_API_KEY` (required for cloud model)
-- `CLOUD_MODEL` (default: `gpt-4.1-mini`)
+- `NVIDIA_KEY` (required for cloud model)
+- `CLOUD_MODEL` (default: `neotron-3-nano`)
 - `KB_PATH` (default: `data/knowledge_base.json`)
 
 ## Run
