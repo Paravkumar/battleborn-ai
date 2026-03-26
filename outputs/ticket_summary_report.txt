@@ -1,0 +1,245 @@
+======================================================================
+TICKET SUMMARY REPORT
+======================================================================
+
+## OVERVIEW
+  Total Tickets:     5
+  Resolved:          0 (0%)
+  Escalated:         5 (100%)
+  Awaiting Customer: 0
+  Failed:            0
+
+----------------------------------------------------------------------
+
+======================================================================
+TICKET SUMMARY: TICK-1002
+======================================================================
+
+## TICKET INFORMATION
+  Subject:    bad product service
+  Priority:   HIGH
+  Issue Type: Not classified
+  Status:     ESCALATED
+  Outcome:    ESCALATED
+
+## CLASSIFICATION
+  Issue Type:  billing
+  Intent:      resolve_duplicate_charge
+  Confidence:  high (90%)
+  Priority:    high
+
+## CUSTOMER REQUEST
+  i bought washing machine from you it is the worst quality what is the procudre for refund
+
+## CONVERSATION HISTORY
+  [Initial Request]
+    i bought washing machine from you it is the worst quality what is the procudre for refund
+
+  [Agent Response 1]
+    I'm escalating this to a billing specialist now for manual review. They'll continue from the details you already shared.
+
+## KNOWLEDGE BASE ARTICLES USED
+  - KB-115: Handle subscription refund and cancellation requests
+    Type: policy | Confidence: 100%
+  - KB-110: Resolve duplicate invoice charges
+    Type: policy | Confidence: 74%
+  - KB-118: Cancel renewal at the end of the current period
+    Type: policy | Confidence: 51%
+
+## ESCALATION
+  Status: ESCALATED TO HUMAN SUPPORT
+  Reason for Escalation:
+    Escalation required. Classification: billing / resolve_duplicate_charge (0.90 confidence). Latest customer message: "i bought washing machine from you it is the worst quality what is the procudre for refund". Evidence reviewed: KB-115 matched refund; KB-110 matched refund; KB-118 matched service. KB attempts: "bad product service i bought washing machine from you it is the worst quality what is...
+  Escalation Summary: Escalation required. Classification: billing / resolve_duplicate_charge (0.90 confidence). Latest customer message: "i bought washing machine from you it is the worst quality what is the procudre for refund". Evidence reviewed: KB-115 matched refund; KB-110 matched refund; KB-118 matched service....
+
+## PROCESSING DETAILS
+  Started:  2026-03-26 05:14:49 UTC
+  Finished: 2026-03-26 05:14:52 UTC
+  Model:    llama3.1:8b
+  Retries:  0
+
+======================================================================
+
+======================================================================
+TICKET SUMMARY: TICK-1003
+======================================================================
+
+## TICKET INFORMATION
+  Subject:    account hacked
+  Priority:   MEDIUM
+  Issue Type: access_management
+  Status:     ESCALATED
+  Outcome:    ESCALATED
+
+## CLASSIFICATION
+  Issue Type:  unknown
+  Intent:      unknown
+  Confidence:  low (20%)
+  Priority:    medium
+
+## CUSTOMER REQUEST
+  i am not able to login into my account is it hacked???
+
+## CONVERSATION HISTORY
+  [Initial Request]
+    i am not able to login into my account is it hacked???
+
+  [Agent Response 1]
+    Thanks for the additional details. I'm escalating this to a human support specialist now and including the conversation history and the steps already attempted so they can continue from here.
+
+## ESCALATION
+  Status: ESCALATED TO HUMAN SUPPORT
+  Reason for Escalation:
+    Escalation required. Classification: unknown / unknown (0.20 confidence). Latest customer message: "yes it is correct". KB attempts: "account hacked yes it is correct" -> No grounded KB article matched the query. | "unknown unknown account hacked" -> No grounded KB article matched the query. | "account hacked correct" -> No grounded KB article matched the query.. Escalation trigger: search_kb f...
+  Escalation Summary: Escalation required. Classification: unknown / unknown (0.20 confidence). Latest customer message: "yes it is correct". KB attempts: "account hacked yes it is correct" -> No grounded KB article matched the query. | "unknown unknown account hacked" -> No grounded KB article matched the query. | "a...
+
+## PROCESSING DETAILS
+  Started:  2026-03-26 05:16:51 UTC
+  Finished: 2026-03-26 05:16:51 UTC
+  Model:    llama3.1:8b
+  Retries:  2
+
+======================================================================
+
+======================================================================
+TICKET SUMMARY: TICK-1004
+======================================================================
+
+## TICKET INFORMATION
+  Subject:    Unable to log into account
+  Priority:   LOW
+  Issue Type: Not classified
+  Status:     ESCALATED
+  Outcome:    ESCALATED
+
+## CLASSIFICATION
+  Issue Type:  unknown
+  Intent:      unknown
+  Confidence:  low (20%)
+  Priority:    low
+
+## CUSTOMER REQUEST
+  i left my account 2 years ago now when i am trying to log in i cant
+
+## CONVERSATION HISTORY
+  [Initial Request]
+    i left my account 2 years ago now when i am trying to log in i cant
+
+  [Agent Response 1]
+    I'm escalating this to a human support specialist now because this needs hands-on review beyond the supported automated steps. They'll continue from the details already captured in this ticket.
+
+## KNOWLEDGE BASE ARTICLES USED
+  - KB-101: Recover MFA access after device loss
+    Type: policy | Confidence: 62%
+
+## ESCALATION
+  Status: ESCALATED TO HUMAN SUPPORT
+  Reason for Escalation:
+    Escalation required. Classification: unknown / unknown (0.20 confidence). Latest customer message: "i left my account 2 years ago now when i am trying to log in i cant". Evidence reviewed: KB-101 matched account, when. KB attempts: "Unable to log into account i left my account 2 years ago now when i am trying to log in i cant" -> Retrieved 1 KB article(s).. Draft assessment: "To regain access t...
+  Escalation Summary: Escalation required. Classification: unknown / unknown (0.20 confidence). Latest customer message: "i left my account 2 years ago now when i am trying to log in i cant". Evidence reviewed: KB-101 matched account, when. KB attempts: "Unable to log into account i left my account 2 years ago now whe...
+
+## PROCESSING DETAILS
+  Started:  2026-03-26 05:18:52 UTC
+  Finished: 2026-03-26 05:18:57 UTC
+  Model:    llama3.1:8b
+  Retries:  0
+
+======================================================================
+
+======================================================================
+TICKET SUMMARY: TICK-1005
+======================================================================
+
+## TICKET INFORMATION
+  Subject:    To know the refund status of my ongoing refund request
+  Priority:   MEDIUM
+  Issue Type: billing
+  Status:     ESCALATED
+  Outcome:    ESCALATED
+
+## CLASSIFICATION
+  Issue Type:  billing
+  Intent:      request_subscription_refund
+  Confidence:  high (90%)
+  Priority:    medium
+
+## CUSTOMER REQUEST
+  I want to know when will my refund be recieved by me , it was process yesterday...
+
+## CONVERSATION HISTORY
+  [Initial Request]
+    I want to know when will my refund be recieved by me , it was process yesterday...
+
+  [Agent Response 1]
+    Thanks for the additional details. I'm escalating this to a billing specialist now and including the conversation history and the steps already attempted so they can continue from here.
+
+## KNOWLEDGE BASE ARTICLES USED
+  - KB-115: Handle subscription refund and cancellation requests
+    Type: policy | Confidence: 100%
+  - KB-110: Resolve duplicate invoice charges
+    Type: policy | Confidence: 74%
+  - KB-114: Send invoice or receipt copies
+    Type: policy | Confidence: 51%
+
+## ESCALATION
+  Status: ESCALATED TO HUMAN SUPPORT
+  Reason for Escalation:
+    Escalation required. Classification: billing / request_subscription_refund (0.90 confidence). Latest customer message: "email - xyz@gmail.com". Evidence reviewed: KB-115 matched email, refund, request; KB-110 matched refund; KB-114 matched email. KB attempts: "To know the refund status of my ongoing refund request email - xyz@gmail.com" -> Retrieved 3 KB article(s).. Draft assessment: "Thanks f...
+  Escalation Summary: Escalation required. Classification: billing / request_subscription_refund (0.90 confidence). Latest customer message: "email - xyz@gmail.com". Evidence reviewed: KB-115 matched email, refund, request; KB-110 matched refund; KB-114 matched email. KB attempts: "To know the refund status of my ongo...
+
+## PROCESSING DETAILS
+  Started:  2026-03-26 05:52:30 UTC
+  Finished: 2026-03-26 05:52:38 UTC
+  Model:    llama3.1:8b
+  Retries:  0
+
+======================================================================
+
+======================================================================
+TICKET SUMMARY: TICK-1006
+======================================================================
+
+## TICKET INFORMATION
+  Subject:    Washing machine not working
+  Priority:   MEDIUM
+  Issue Type: billing
+  Status:     ESCALATED
+  Outcome:    ESCALATED
+
+## CLASSIFICATION
+  Issue Type:  billing
+  Intent:      request_subscription_refund
+  Confidence:  high (90%)
+  Priority:    high
+
+## CUSTOMER REQUEST
+  I just bought your latest washing machine , and today its not working , what should i do ?
+
+## CONVERSATION HISTORY
+  [Initial Request]
+    I just bought your latest washing machine , and today its not working , what should i do ?
+
+  [Agent Response 1]
+    Thanks for the additional details. I'm escalating this to a billing specialist now and including the conversation history and the steps already attempted so they can continue from here.
+
+## KNOWLEDGE BASE ARTICLES USED
+  - KB-115: Handle subscription refund and cancellation requests
+    Type: policy | Confidence: 100%
+  - KB-110: Resolve duplicate invoice charges
+    Type: policy | Confidence: 74%
+  - KB-112: Update VAT, tax ID, or billing profile details
+    Type: policy | Confidence: 89%
+
+## ESCALATION
+  Status: ESCALATED TO HUMAN SUPPORT
+  Reason for Escalation:
+    Escalation required. Classification: billing / request_subscription_refund (0.90 confidence). Latest customer message: "i want a refund , of order id XXXX". Evidence reviewed: KB-115 matched id, order, refund; KB-110 matched refund; KB-112 matched id. KB attempts: "Washing machine not working i want a refund , of order id XXXX" -> Retrieved 3 KB article(s).. Draft assessment: "Thanks for the up...
+  Escalation Summary: Escalation required. Classification: billing / request_subscription_refund (0.90 confidence). Latest customer message: "i want a refund , of order id XXXX". Evidence reviewed: KB-115 matched id, order, refund; KB-110 matched refund; KB-112 matched id. KB attempts: "Washing machine not working i w...
+
+## PROCESSING DETAILS
+  Started:  2026-03-26 06:04:52 UTC
+  Finished: 2026-03-26 06:05:04 UTC
+  Model:    llama3.1:8b
+  Retries:  0
+
+======================================================================

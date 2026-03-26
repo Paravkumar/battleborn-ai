@@ -1,1 +1,0 @@
-"""Ticket resolution hackathon MVP."""

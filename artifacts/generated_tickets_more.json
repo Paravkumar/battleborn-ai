@@ -1,0 +1,98 @@
+[
+  {
+    "ticket_id": "TICK-2002",
+    "customer_id": "CUST-SYN-2002",
+    "subject": "I was charged twice for the same invoice",
+    "body": "I was billed twice for invoice INV-9979 yesterday. Please explain the duplicate charge and what refund steps apply.",
+    "priority": "high",
+    "status": "escalated",
+    "issue_type": "billing",
+    "resolution_summary": "Escalation required. Classification: billing / resolve_duplicate_charge (0.90 confidence). Latest customer message: \"I checked again and both charges settled on the card statement.\". Evidence reviewed: KB-110 matched both, charged, charges, invoice; KB-111 matched card, invoice; KB-114 matched invoice. KB attempts: \"I was charged twice for the same invoice I checked again and both charges settled on the card statement.\" -> Retrieved 3 KB article(s).. Draft assessment: \"Thanks for confirming both charges settled. This needs a billing correction and refund review, so I'm escalating this to the billing team for manual handling.\". Escalation trigger: draft_response failed with 'Draft indicates escalation is required.'.",
+    "customer_message_history": [
+      "I checked again and both charges settled on the card statement."
+    ],
+    "pending_customer_replies": [],
+    "response_history": [
+      "Priority noted. Please share the invoice IDs and payment timestamps so we can confirm whether the second charge is only a temporary authorization or a true duplicate. If both charges have settled, we will correct the billing and confirm the refund timeline.",
+      "Thanks for the additional details. I'm escalating this to a billing specialist now and including the conversation history and the steps already attempted so they can continue from here.",
+      "Thanks for the additional details. I'm escalating this to a billing specialist now and including the conversation history and the steps already attempted so they can continue from here.",
+      "Thanks for the additional details. I'm escalating this to a billing specialist now and including the conversation history and the steps already attempted so they can continue from here.",
+      "Thanks for the additional details. I'm escalating this to a billing specialist now and including the conversation history and the steps already attempted so they can continue from here.",
+      "Thanks for the additional details. I'm escalating this to a billing specialist now and including the conversation history and the steps already attempted so they can continue from here.",
+      "Thanks for the additional details. I'm escalating this to a billing specialist now and including the conversation history and the steps already attempted so they can continue from here.",
+      "Thanks for the additional details. I'm escalating this to a billing specialist now and including the conversation history and the steps already attempted so they can continue from here."
+    ],
+    "tool_failures": {
+      "search_kb": 0,
+      "post_response": 0
+    }
+  },
+  {
+    "ticket_id": "TICK-2003",
+    "customer_id": "CUST-SYN-2003",
+    "subject": "Webhook delivery keeps timing out",
+    "body": "We use Atlas Console webhooks and the delivery logs show repeated timeout failures. Please help us troubleshoot the integration.",
+    "priority": "medium",
+    "status": "escalated",
+    "issue_type": "access_management",
+    "resolution_summary": "Escalation required. Classification: access_management / restore_account_access (0.85 confidence). Latest customer message: \"We checked the signing secret and timeout settings, but deliveries are still failing.\". Evidence reviewed: KB-108 matched delivery. KB attempts: \"Webhook delivery keeps timing out We checked the signing secret and timeout settings, but deliveries are still failing.\" -> Retrieved 1 KB article(s).. Draft assessment: \"The account recovery steps did not restore access, so I'm escalating this ticket to a human support specialist for deeper account review.\". Escalation trigger: draft_response failed with 'Draft indicates escalation is required.'.",
+    "customer_message_history": [
+      "We checked the signing secret and timeout settings, but deliveries are still failing."
+    ],
+    "pending_customer_replies": [],
+    "response_history": [
+      "Please verify the signing secret, confirm the endpoint is responding within the timeout window, and review whether recent deliveries returned 4xx or 5xx responses. Once you share those checks, we can confirm the next fix.",
+      "Thanks for the additional details. I'm escalating this to a support specialist now and including the conversation history and the steps already attempted so they can continue from here.",
+      "Thanks for the additional details. I'm escalating this to a support specialist now and including the conversation history and the steps already attempted so they can continue from here.",
+      "Thanks for the additional details. I'm escalating this to a support specialist now and including the conversation history and the steps already attempted so they can continue from here.",
+      "Thanks for the additional details. I'm escalating this to a support specialist now and including the conversation history and the steps already attempted so they can continue from here."
+    ],
+    "tool_failures": {
+      "search_kb": 0,
+      "draft_response": 0
+    }
+  },
+  {
+    "ticket_id": "TICK-2001",
+    "customer_id": "CUST-SYN-2001",
+    "subject": "Need help to unlock my login",
+    "body": "I think the sign in flow locked me out after too many password attempts on Harbor Sync. Please help me regain access quickly.",
+    "priority": "high",
+    "status": "escalated",
+    "issue_type": "access_management",
+    "resolution_summary": "Escalation required. Classification: access_management / restore_account_access (0.92 confidence). Latest customer message: \"I followed the reset steps but I still cannot sign in to the account.\". Evidence reviewed: KB-100 matched account, login, reset, still; KB-106 matched account, login, sign; KB-107 matched account, login, reset, sign. KB attempts: \"Need help to unlock my login I followed the reset steps but I still cannot sign in to the account.\" -> Retrieved 3 KB article(s).. Draft assessment: \"The account recovery steps did not restore access, so I'm escalating this ticket to a human support specialist for deeper account review.\". Escalation trigger: draft_response failed with 'Draft indicates escalation is required.'.",
+    "customer_message_history": [
+      "I followed the reset steps but I still cannot sign in to the account."
+    ],
+    "pending_customer_replies": [],
+    "response_history": [
+      "Priority noted. Please reply with the current login email and the new email you want to use. After we verify account ownership, the email change can be reviewed.",
+      "Thanks for the additional details. I'm escalating this to a support specialist now and including the conversation history and the steps already attempted so they can continue from here.",
+      "Thanks for the additional details. I'm escalating this to a support specialist now and including the conversation history and the steps already attempted so they can continue from here.",
+      "Thanks for the additional details. I'm escalating this to a support specialist now and including the conversation history and the steps already attempted so they can continue from here."
+    ],
+    "tool_failures": {
+      "search_kb": 0
+    }
+  },
+  {
+    "ticket_id": "TICK-2004",
+    "customer_id": "CUST-SYN-2004",
+    "subject": "Need root cause for private ERP batch mapping issue",
+    "body": "Our private warehouse routing engine started producing invalid serial mappings after the midnight batch. This is a custom workflow with no standard runbook and needs specialist review.",
+    "priority": "medium",
+    "status": "pending_customer",
+    "issue_type": "billing",
+    "resolution_summary": "Thanks for the update. I need one more specific detail to move forward: share the exact error message/code or confirm what changed after the previous step.",
+    "customer_message_history": [],
+    "pending_customer_replies": [],
+    "response_history": [
+      "Please send the billing email plus the exact company, billing address, and tax details that should appear on future invoices. Once those are confirmed, the billing profile update can be reviewed.",
+      "Please reply with the billing email tied to the trial and confirm when the trial ended. I can then review the conversion timing and whether the plan should stay active.",
+      "Thanks for the update. I need one more specific detail to move forward: share the exact error message/code or confirm what changed after the previous step."
+    ],
+    "tool_failures": {
+      "search_kb": 0
+    }
+  }
+]
