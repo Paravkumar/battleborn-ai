@@ -1,25 +1,24 @@
-# Battleborn Customer Support AI (A2A Template)
+# Battleborn Customer Support AI (NVIDIA NIM)
 
-This project is a clean A2A-template implementation for **PS3 Domain 1: Customer Ticket Resolution** using:
+This project is an AI-powered automated workflow implementation for **Problem Statement 3: Domain 1 (Customer Ticket Resolution)**, running purely on NVIDIA's NIM API architecture.
 
-- Cloud LLM API (primary)
-- Lightweight RAG over local JSON knowledge base
-
-The workflow engine now enforces:
-- ordered tool plan (ticket_reader -> knowledge_base_query -> response_composer -> ticket_updater)
-- retries with modified arguments (max two retries)
-- escalation via `escalation_trigger` when a step cannot be completed
-- structured JSON execution log per run in `outputs/`
+## Features
+- Full compliance with PS3 Domain 1 rubric (Adaptive Workflow Orchestration Agent).
+- Ordered tool execution (`ticket_reader` -> `knowledge_base_query` -> `response_composer` -> `ticket_updater`).
+- Intelligent replanning on failures with parameter mutation (up to 2 retries per step).
+- Graceful escalation using the `escalation_trigger` tool upon consecutive failures.
+- Structured JSON execution log (`ExecutionLog`) produced in `outputs/` summarizing step outcomes, retries, and errors.
+- Connects directly to `integrate.api.nvidia.com` for fast OpenAI-compatible Chat Completions using Nemotron models.
 
 ## Template Structure
 
-```
+```text
 .
 ├── src/
 │   ├── __init__.py
 │   ├── __main__.py
-│   ├── openai_agent.py
-│   ├── openai_agent_executor.py
+│   ├── nvidia_agent.py
+│   ├── nvidia_agent_executor.py
 │   └── agent_toolset.py
 ├── .gitignore
 ├── pyproject.toml
@@ -28,16 +27,21 @@ The workflow engine now enforces:
 └── README.md
 ```
 
-## Environment Variables
+## Environment Setup
 
-- `OPENAI_API_KEY` (required for cloud model)
-- `CLOUD_MODEL` (default: `gpt-4.1-mini`)
-- `KB_PATH` (default: `data/knowledge_base.json`)
+Inside `docker-compose.yml`, supply:
+- `NVIDIA_API_KEY` (Required. Pull your API key from build.nvidia.com).
+- `CLOUD_MODEL` (Default: `nvidia/nemotron-3-nano-30b-a3b` or `nvidia/nemotron-4-340b-instruct`)
+- `KB_PATH` (Default: `data/knowledge_base.json`)
 
-## Run
+## How to Run
 
+1. Start the Docker container
 ```powershell
-pip install -e .
-python -m src --host localhost --port 5000
+docker compose up --build
 ```
 
+2. Once it says Uvicorn is running, send a test via PowerShell:
+```powershell
+Invoke-RestMethod -Uri "http://localhost:5000/agent/message" -Method POST -Headers @{"Content-Type"="application/json"} -Body '{"message": "Customer says their earbuds are not pairing over bluetooth."}'
+```
