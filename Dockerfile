@@ -2,7 +2,8 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-COPY src/ /app
+COPY src/ /app/src
+COPY data/ /app/data
 
 RUN pip install --no-cache-dir \
     "a2a-sdk[http-server]>=0.3.0" \
@@ -15,5 +16,5 @@ RUN pip install --no-cache-dir \
 
 ENV PYTHONUNBUFFERED=1
 
-CMD ["python", "__main__.py", "--host", "0.0.0.0", "--port", "5000"]
+CMD ["python", "-m", "src.__main__", "--host", "0.0.0.0", "--port", "5000"]
 

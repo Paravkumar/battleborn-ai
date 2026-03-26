@@ -111,11 +111,11 @@ class TicketResolutionWorkflow:
         if not kb_hits:
             return {"success": False, "retryable": True, "message": "No KB hits for grounding."}
 
-        cloud_key = os.getenv("OPENAI_API_KEY", "").strip()
+        cloud_key = os.getenv("NVIDIA_API_KEY", "").strip()
         if not cloud_key:
-            return {"success": False, "retryable": False, "message": "OPENAI_API_KEY missing."}
+            return {"success": False, "retryable": False, "message": "NVIDIA_API_KEY missing."}
 
-        cloud_model = os.getenv("CLOUD_MODEL", "gpt-4.1-mini")
+        cloud_model = os.getenv("CLOUD_MODEL", "nvidia/nemotron-3-nano")
         context = " | ".join(str(item.get("summary", "")) for item in kb_hits[:3])
         prompt = (
             "You are a customer support agent. Use only the provided knowledge context.\n"
@@ -125,8 +125,11 @@ class TicketResolutionWorkflow:
         )
         async with httpx.AsyncClient(timeout=30) as client:
             response = await client.post(
-                "https://api.openai.com/v1/chat/completions",
-                headers={"Authorization": f"Bearer {cloud_key}"},
+                "https://integrate.api.nvidia.com/v1/chat/completions",
+                headers={
+                    "Authorization": f"Bearer {cloud_key}",
+                    "Content-Type": "application/json"
+                },
                 json={
                     "model": cloud_model,
                     "messages": [
@@ -134,6 +137,7 @@ class TicketResolutionWorkflow:
                         {"role": "user", "content": prompt},
                     ],
                     "temperature": 0.2,
+                    "max_tokens": 1024,
                 },
             )
             response.raise_for_status()
