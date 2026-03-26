@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Support AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f1115;
+            --chat-bg: rgba(25, 28, 36, 0.6);
+            --user-bubble: linear-gradient(135deg, #6366f1, #8b5cf6);
+            --agent-bubble: rgba(255, 255, 255, 0.05);
+            --accent: #8b5cf6;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --border: rgba(255, 255, 255, 0.1);
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(99, 102, 241, 0.15), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.15), transparent 25%);
+            color: var(--text-primary);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .chat-container {
+            width: 100%;
+            max-width: 800px;
+            height: 90vh;
+            background: var(--chat-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        .header {
+            padding: 24px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .avatar-glow {
+            position: relative;
+            width: 48px;
+            height: 48px;
+        }
+
+        .avatar-glow::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            background: linear-gradient(45deg, #6366f1, #8b5cf6, #ec4899);
+            border-radius: 50%;
+            filter: blur(8px);
+            opacity: 0.8;
+            animation: pulse-glow 3s linear infinite;
+        }
+
+        .avatar {
+            position: relative;
+            width: 48px;
+            height: 48px;
+            background: #1e2128;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: #fff;
+            z-index: 1;
+        }
+
+        .header-info h1 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .header-info p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #22c55e;
+        }
+
+        .messages {
+            flex: 1;
+            padding: 24px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            scroll-behavior: smooth;
+        }
+
+        .messages::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .messages::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 6px;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 16px 20px;
+            border-radius: 20px;
+            line-height: 1.5;
+            font-size: 0.95rem;
+            animation: slide-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        .message.user {
+            background: var(--user-bubble);
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+            box-shadow: 0 8px 16px -4px rgba(99, 102, 241, 0.3);
+        }
+
+        .message.agent {
+            background: var(--agent-bubble);
+            border: 1px solid var(--border);
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+        }
+
+        /* Markdown formatting for agent responses */
+        .message.agent p { margin-bottom: 0.75em; }
+        .message.agent p:last-child { margin-bottom: 0; }
+        .message.agent strong { color: #fff; font-weight: 600; }
+        .message.agent ol, .message.agent ul { margin-left: 1.2em; margin-bottom: 0.75em; }
+        .message.agent li { margin-bottom: 0.3em; }
+
+        .input-area {
+            padding: 24px;
+            background: rgba(15, 17, 21, 0.4);
+            border-top: 1px solid var(--border);
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 18px 60px 18px 24px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        input:focus {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(139, 92, 246, 0.5);
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+        }
+
+        input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .send-btn {
+            position: absolute;
+            right: 8px;
+            width: 44px;
+            height: 44px;
+            background: var(--user-bubble);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .send-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
+        }
+
+        .send-btn:disabled {
+            background: var(--border);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+            opacity: 0.5;
+        }
+
+        /* Loading indicator */
+        .typing-indicator {
+            display: none;
+            padding: 16px 20px;
+            background: var(--agent-bubble);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            border-bottom-left-radius: 4px;
+            align-self: flex-start;
+            gap: 4px;
+            align-items: center;
+        }
+
+        .typing-indicator.active {
+            display: flex;
+        }
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            background: var(--text-secondary);
+            border-radius: 50%;
+            animation: bounce 1.4s infinite ease-in-out both;
+        }
+
+        .dot:nth-child(1) { animation-delay: -0.32s; }
+        .dot:nth-child(2) { animation-delay: -0.16s; }
+
+        @keyframes slide-up {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes bounce {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+
+        @keyframes pulse-glow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="header">
+            <div class="avatar-glow">
+                <div class="avatar">AI</div>
+            </div>
+            <div class="header-info">
+                <h1>Customer Support</h1>
+                <p><span class="status-dot"></span> Online & Operational</p>
+            </div>
+        </div>
+
+        <div class="messages" id="messages">
+            <div class="message agent" style="animation-delay: 0.1s">
+                Hello! I am Battleborn's intelligent customer support agent. How can I help you today?
+            </div>
+            <div class="typing-indicator" id="typing-indicator">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+
+        <div class="input-area">
+            <form id="chat-form" class="input-wrapper">
+                <input type="text" id="user-input" placeholder="Type your issue..." autocomplete="off" required>
+                <button type="submit" class="send-btn" id="send-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('chat-form');
+        const input = document.getElementById('user-input');
+        const messagesDiv = document.getElementById('messages');
+        const typingIndicator = document.getElementById('typing-indicator');
+        const sendBtn = document.getElementById('send-btn');
+
+        // Parse basic markdown formatting (paragraphs, bold text, numbers)
+        function parseBasicMarkdown(text) {
+            let parsed = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            parsed = parsed.replace(/\n\n/g, '</p><p>');
+            parsed = '<p>' + parsed + '</p>';
+            parsed = parsed.replace(/<p>\d+\.\s(.*?)<\/p>/g, '<li>$1</li>');
+            return parsed;
+        }
+
+        function appendMessage(text, sender) {
+            const msgObj = document.createElement('div');
+            msgObj.className = `message ${sender}`;
+            
+            if(sender === 'agent') {
+                msgObj.innerHTML = parseBasicMarkdown(text);
+            } else {
+                msgObj.textContent = text;
+            }
+            
+            messagesDiv.insertBefore(msgObj, typingIndicator);
+            scrollToBottom();
+        }
+
+        function scrollToBottom() {
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const message = input.value.trim();
+            if (!message) return;
+
+            // Render user message
+            appendMessage(message, 'user');
+            input.value = '';
+            input.disabled = true;
+            sendBtn.disabled = true;
+
+            // Show pulsing loading dots
+            typingIndicator.classList.add('active');
+            scrollToBottom();
+
+            try {
+                const response = await fetch('/agent/message', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message })
+                });
+
+                if (!response.ok) throw new Error('API down');
+
+                const data = await response.json();
+                
+                // Hide loader
+                typingIndicator.classList.remove('active');
+
+                // Extract purely the agent's textual response as requested
+                const finalResponse = data.final_response || "Sorry, the agent did not return a response.";
+                
+                appendMessage(finalResponse, 'agent');
+
+            } catch (error) {
+                console.error(error);
+                typingIndicator.classList.remove('active');
+                appendMessage("❌ Network Error: Failed to contact the agent backend.", 'agent');
+            } finally {
+                input.disabled = false;
+                sendBtn.disabled = false;
+                input.focus();
+                scrollToBottom();
+            }
+        });
+    </script>
+</body>
+</html>

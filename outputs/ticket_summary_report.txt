@@ -3,243 +3,303 @@ TICKET SUMMARY REPORT
 ======================================================================
 
 ## OVERVIEW
-  Total Tickets:     5
-  Resolved:          0 (0%)
-  Escalated:         5 (100%)
-  Awaiting Customer: 0
+  Total Tickets:     9
+  Resolved:          7 (78%)
+  Escalated:         1 (11%)
   Failed:            0
 
 ----------------------------------------------------------------------
+======================================================================
+TICKET SUMMARY: TICK-1001
+======================================================================
 
+## TICKET INFORMATION
+  Status:     COMPLETED
+  Outcome:    RESOLVED
+
+## CUSTOMER REQUEST
+  hi
+
+## CONVERSATION HISTORY
+  [Initial Request]
+    hi
+
+  [Agent Response]
+    Hello! How can I assist you today? If you have any questions about creating an account, placing an order, or shipping options, just let me know.
+
+## KNOWLEDGE BASE ARTICLES USED
+  - KB-1.1: How do I create an Aura Electronics account?
+    Summary: Customers can create an account by visiting our website and clicking 'Sign Up' i...
+  - KB-2.1: What are your shipping options and timelines?
+    Summary: We offer three shipping tiers. Standard Shipping: 5-7 business days. Free on ord...
+  - KB-2.3: Can I change my shipping address after placing an order?
+    Summary: Shipping addresses can only be modified within 1 hour of placing the order. Once...
+
+## PROCESSING DETAILS
+  Started:  2026-03-26T11:27:05.653913Z
+  Finished: 2026-03-26T11:27:07.224113Z
+  Model:    nvidia/nemotron-4-340b-instruct
+  Retries:  0
+
+======================================================================
 ======================================================================
 TICKET SUMMARY: TICK-1002
 ======================================================================
 
 ## TICKET INFORMATION
-  Subject:    bad product service
-  Priority:   HIGH
-  Issue Type: Not classified
-  Status:     ESCALATED
-  Outcome:    ESCALATED
-
-## CLASSIFICATION
-  Issue Type:  billing
-  Intent:      resolve_duplicate_charge
-  Confidence:  high (90%)
-  Priority:    high
+  Status:     COMPLETED
+  Outcome:    RESOLVED
 
 ## CUSTOMER REQUEST
-  i bought washing machine from you it is the worst quality what is the procudre for refund
+  issue resolved
 
 ## CONVERSATION HISTORY
   [Initial Request]
-    i bought washing machine from you it is the worst quality what is the procudre for refund
+    issue resolved
 
-  [Agent Response 1]
-    I'm escalating this to a billing specialist now for manual review. They'll continue from the details you already shared.
+  [Agent Response]
+    Your issue has been resolved. Thank you for confirming. You may now close the support ticket. If you need any further assistance, please let us know.
 
 ## KNOWLEDGE BASE ARTICLES USED
-  - KB-115: Handle subscription refund and cancellation requests
-    Type: policy | Confidence: 100%
-  - KB-110: Resolve duplicate invoice charges
-    Type: policy | Confidence: 74%
-  - KB-118: Cancel renewal at the end of the current period
-    Type: policy | Confidence: 51%
-
-## ESCALATION
-  Status: ESCALATED TO HUMAN SUPPORT
-  Reason for Escalation:
-    Escalation required. Classification: billing / resolve_duplicate_charge (0.90 confidence). Latest customer message: "i bought washing machine from you it is the worst quality what is the procudre for refund". Evidence reviewed: KB-115 matched refund; KB-110 matched refund; KB-118 matched service. KB attempts: "bad product service i bought washing machine from you it is the worst quality what is...
-  Escalation Summary: Escalation required. Classification: billing / resolve_duplicate_charge (0.90 confidence). Latest customer message: "i bought washing machine from you it is the worst quality what is the procudre for refund". Evidence reviewed: KB-115 matched refund; KB-110 matched refund; KB-118 matched service....
+  - KB-9.4: When should I create a support ticket?
+    Summary: Create a support ticket in these situations. The issue cannot be resolved in the...
+  - KB-2.2: My package is marked as 'Delivered' but I haven't received it. What do I do?
+    Summary: Follow these steps to resolve missing 'Delivered' packages. Ask the customer to ...
+  - KB-3.3: How long do refunds take to process?
+    Summary: Once the return arrives at our warehouse, it takes 3-5 business days to inspect ...
 
 ## PROCESSING DETAILS
-  Started:  2026-03-26 05:14:49 UTC
-  Finished: 2026-03-26 05:14:52 UTC
-  Model:    llama3.1:8b
+  Started:  2026-03-26T11:27:12.414319Z
+  Finished: 2026-03-26T11:27:14.257199Z
+  Model:    nvidia/nemotron-4-340b-instruct
   Retries:  0
 
 ======================================================================
-
 ======================================================================
 TICKET SUMMARY: TICK-1003
 ======================================================================
 
 ## TICKET INFORMATION
-  Subject:    account hacked
-  Priority:   MEDIUM
-  Issue Type: access_management
   Status:     ESCALATED
   Outcome:    ESCALATED
 
-## CLASSIFICATION
-  Issue Type:  unknown
-  Intent:      unknown
-  Confidence:  low (20%)
-  Priority:    medium
-
 ## CUSTOMER REQUEST
-  i am not able to login into my account is it hacked???
+  cook food
 
 ## CONVERSATION HISTORY
   [Initial Request]
-    i am not able to login into my account is it hacked???
+    cook food
 
-  [Agent Response 1]
-    Thanks for the additional details. I'm escalating this to a human support specialist now and including the conversation history and the steps already attempted so they can continue from here.
+  [Agent Response]
+    I have escalated your case to a specialist who will follow up shortly.
 
 ## ESCALATION
-  Status: ESCALATED TO HUMAN SUPPORT
   Reason for Escalation:
-    Escalation required. Classification: unknown / unknown (0.20 confidence). Latest customer message: "yes it is correct". KB attempts: "account hacked yes it is correct" -> No grounded KB article matched the query. | "unknown unknown account hacked" -> No grounded KB article matched the query. | "account hacked correct" -> No grounded KB article matched the query.. Escalation trigger: search_kb f...
-  Escalation Summary: Escalation required. Classification: unknown / unknown (0.20 confidence). Latest customer message: "yes it is correct". KB attempts: "account hacked yes it is correct" -> No grounded KB article matched the query. | "unknown unknown account hacked" -> No grounded KB article matched the query. | "a...
+    response_composer failed after retries: No KB hits for grounding.
 
 ## PROCESSING DETAILS
-  Started:  2026-03-26 05:16:51 UTC
-  Finished: 2026-03-26 05:16:51 UTC
-  Model:    llama3.1:8b
-  Retries:  2
+  Started:  2026-03-26T11:27:19.971820Z
+  Finished: 2026-03-26T11:27:19.971934Z
+  Model:    nvidia/nemotron-4-340b-instruct
+  Retries:  3
 
 ======================================================================
-
 ======================================================================
 TICKET SUMMARY: TICK-1004
 ======================================================================
 
 ## TICKET INFORMATION
-  Subject:    Unable to log into account
-  Priority:   LOW
-  Issue Type: Not classified
-  Status:     ESCALATED
-  Outcome:    ESCALATED
-
-## CLASSIFICATION
-  Issue Type:  unknown
-  Intent:      unknown
-  Confidence:  low (20%)
-  Priority:    low
+  Status:     COMPLETED
+  Outcome:    RESOLVED
 
 ## CUSTOMER REQUEST
-  i left my account 2 years ago now when i am trying to log in i cant
+  drink water
 
 ## CONVERSATION HISTORY
   [Initial Request]
-    i left my account 2 years ago now when i am trying to log in i cant
+    drink water
 
-  [Agent Response 1]
-    I'm escalating this to a human support specialist now because this needs hands-on review beyond the supported automated steps. They'll continue from the details already captured in this ticket.
+  [Agent Response]
+    **Practical steps for using your AuraSync earbuds around water**
+
+1. **Check the model’s IP rating**  
+   - *AuraSync Basic*: IPX4 – protects against splashes and light rain.  
+   - *AuraSync Pro*: IPX6 – protects against stronger water jets, but not full submersion.
+
+2. **Avoid submerging the earbuds**  
+   - Even the IPX6 rating does not cover prolonged immersion; keep them out of pools, showers, or bathtubs.
+
+3. **Prevent direct contact with liquids you’ll drink**  
+   - Keep beverages away from the earbuds. If a sip spills onto them, wipe dry immediately with a soft, dry cloth.
+
+4. **Do not use the earbuds while drinking**  
+   - Holding a drink may expose the earbuds to accidental splashes that exceed the IP rating, which would void the warranty.
+
+5. **If water contact occurs, dry thoroughly**  
+   - Power off, remove any case, and let the earbuds air‑dry completely before reuse. Do not charge until fully dry.
+
+6. **Remember warranty limits**  
+   - Water damage is not covered if the earbuds are used beyond their rated protection (e.g., submerging an IPX4 device).  
+
+Follow these steps to keep your earbuds functional and maintain warranty coverage.
 
 ## KNOWLEDGE BASE ARTICLES USED
-  - KB-101: Recover MFA access after device loss
-    Type: policy | Confidence: 62%
-
-## ESCALATION
-  Status: ESCALATED TO HUMAN SUPPORT
-  Reason for Escalation:
-    Escalation required. Classification: unknown / unknown (0.20 confidence). Latest customer message: "i left my account 2 years ago now when i am trying to log in i cant". Evidence reviewed: KB-101 matched account, when. KB attempts: "Unable to log into account i left my account 2 years ago now when i am trying to log in i cant" -> Retrieved 1 KB article(s).. Draft assessment: "To regain access t...
-  Escalation Summary: Escalation required. Classification: unknown / unknown (0.20 confidence). Latest customer message: "i left my account 2 years ago now when i am trying to log in i cant". Evidence reviewed: KB-101 matched account, when. KB attempts: "Unable to log into account i left my account 2 years ago now whe...
+  - KB-6.1: What are the key differences between AuraSync Basic and AuraSync Pro earbuds?
+    Summary: Feature comparison: AuraSync Basic: 6-hour battery (24-hour with case), IPX4 wat...
+  - KB-8.2: What voids the warranty?
+    Summary: The warranty is strictly voided by the following. Physical damage (e.g., cracked...
 
 ## PROCESSING DETAILS
-  Started:  2026-03-26 05:18:52 UTC
-  Finished: 2026-03-26 05:18:57 UTC
-  Model:    llama3.1:8b
+  Started:  2026-03-26T11:27:27.919258Z
+  Finished: 2026-03-26T11:27:31.691560Z
+  Model:    nvidia/nemotron-4-340b-instruct
   Retries:  0
 
 ======================================================================
-
 ======================================================================
 TICKET SUMMARY: TICK-1005
 ======================================================================
 
 ## TICKET INFORMATION
-  Subject:    To know the refund status of my ongoing refund request
-  Priority:   MEDIUM
-  Issue Type: billing
-  Status:     ESCALATED
-  Outcome:    ESCALATED
-
-## CLASSIFICATION
-  Issue Type:  billing
-  Intent:      request_subscription_refund
-  Confidence:  high (90%)
-  Priority:    medium
+  Status:     COMPLETED
+  Outcome:    RESOLVED
 
 ## CUSTOMER REQUEST
-  I want to know when will my refund be recieved by me , it was process yesterday...
+  can you cook food for me please
 
 ## CONVERSATION HISTORY
   [Initial Request]
-    I want to know when will my refund be recieved by me , it was process yesterday...
+    can you cook food for me please
 
-  [Agent Response 1]
-    Thanks for the additional details. I'm escalating this to a billing specialist now and including the conversation history and the steps already attempted so they can continue from here.
+  [Agent Response]
+    I’m sorry, but I’m not able to prepare or cook food for you. I can only help with order‑related questions such as discounts for students or military personnel and installment‑payment options through Affirm or Klarna. If you have any questions about those services, just let me know and I’ll provide the next steps.
 
 ## KNOWLEDGE BASE ARTICLES USED
-  - KB-115: Handle subscription refund and cancellation requests
-    Type: policy | Confidence: 100%
-  - KB-110: Resolve duplicate invoice charges
-    Type: policy | Confidence: 74%
-  - KB-114: Send invoice or receipt copies
-    Type: policy | Confidence: 51%
-
-## ESCALATION
-  Status: ESCALATED TO HUMAN SUPPORT
-  Reason for Escalation:
-    Escalation required. Classification: billing / request_subscription_refund (0.90 confidence). Latest customer message: "email - xyz@gmail.com". Evidence reviewed: KB-115 matched email, refund, request; KB-110 matched refund; KB-114 matched email. KB attempts: "To know the refund status of my ongoing refund request email - xyz@gmail.com" -> Retrieved 3 KB article(s).. Draft assessment: "Thanks f...
-  Escalation Summary: Escalation required. Classification: billing / request_subscription_refund (0.90 confidence). Latest customer message: "email - xyz@gmail.com". Evidence reviewed: KB-115 matched email, refund, request; KB-110 matched refund; KB-114 matched email. KB attempts: "To know the refund status of my ongo...
+  - KB-1.4: Do you offer an educational or military discount?
+    Summary: We offer a 10% discount for active students and military personnel. Customers mu...
+  - KB-4.4: Do you offer Buy Now, Pay Later (BNPL) options?
+    Summary: Yes. We partner with Affirm and Klarna for installment payment options on orders...
+  - KB-9.3: How should I handle customers who ask for something outside our policies?
+    Summary: Be empathetic but firm. Never promise exceptions you cannot guarantee. If a cust...
 
 ## PROCESSING DETAILS
-  Started:  2026-03-26 05:52:30 UTC
-  Finished: 2026-03-26 05:52:38 UTC
-  Model:    llama3.1:8b
+  Started:  2026-03-26T11:27:46.788359Z
+  Finished: 2026-03-26T11:27:48.763458Z
+  Model:    nvidia/nemotron-4-340b-instruct
   Retries:  0
 
 ======================================================================
-
 ======================================================================
 TICKET SUMMARY: TICK-1006
 ======================================================================
 
 ## TICKET INFORMATION
-  Subject:    Washing machine not working
-  Priority:   MEDIUM
-  Issue Type: billing
-  Status:     ESCALATED
-  Outcome:    ESCALATED
-
-## CLASSIFICATION
-  Issue Type:  billing
-  Intent:      request_subscription_refund
-  Confidence:  high (90%)
-  Priority:    high
+  Status:     COMPLETED
+  Outcome:    RESOLVED
 
 ## CUSTOMER REQUEST
-  I just bought your latest washing machine , and today its not working , what should i do ?
+  my account is looged out , and i am unable to log into it
 
 ## CONVERSATION HISTORY
   [Initial Request]
-    I just bought your latest washing machine , and today its not working , what should i do ?
+    my account is looged out , and i am unable to log into it
 
-  [Agent Response 1]
-    Thanks for the additional details. I'm escalating this to a billing specialist now and including the conversation history and the steps already attempted so they can continue from here.
+  [Agent Response]
+    I’m sorry, but the information you’ve provided doesn’t include any guidance on account‑login problems or how to resolve a logout issue. To get assistance with signing back into your account, please reach out to our dedicated support team through the appropriate channel (e.g., the support portal, live chat, or phone line). They’ll be able to walk you through the specific steps needed to regain access.
 
 ## KNOWLEDGE BASE ARTICLES USED
-  - KB-115: Handle subscription refund and cancellation requests
-    Type: policy | Confidence: 100%
-  - KB-110: Resolve duplicate invoice charges
-    Type: policy | Confidence: 74%
-  - KB-112: Update VAT, tax ID, or billing profile details
-    Type: policy | Confidence: 89%
-
-## ESCALATION
-  Status: ESCALATED TO HUMAN SUPPORT
-  Reason for Escalation:
-    Escalation required. Classification: billing / request_subscription_refund (0.90 confidence). Latest customer message: "i want a refund , of order id XXXX". Evidence reviewed: KB-115 matched id, order, refund; KB-110 matched refund; KB-112 matched id. KB attempts: "Washing machine not working i want a refund , of order id XXXX" -> Retrieved 3 KB article(s).. Draft assessment: "Thanks for the up...
-  Escalation Summary: Escalation required. Classification: billing / request_subscription_refund (0.90 confidence). Latest customer message: "i want a refund , of order id XXXX". Evidence reviewed: KB-115 matched id, order, refund; KB-110 matched refund; KB-112 matched id. KB attempts: "Washing machine not working i w...
+  - KB-5.2: My AuraGlow Smart Lamp keeps disconnecting from Wi-Fi.
+    Summary: The AuraGlow Lamp only supports 2.4GHz Wi-Fi networks. It will not connect to 5G...
+  - KB-5.3: The screen on my AuraTab Tablet is frozen and unresponsive.
+    Summary: Perform a hard reboot. Press and hold the Power button and the Volume Down butto...
+  - KB-5.5: My AuraSound Speaker produces crackling or distorted audio.
+    Summary: Diagnose and resolve audio distortion. Check the audio source: test with a diffe...
 
 ## PROCESSING DETAILS
-  Started:  2026-03-26 06:04:52 UTC
-  Finished: 2026-03-26 06:05:04 UTC
-  Model:    llama3.1:8b
+  Started:  2026-03-26T11:31:12.458057Z
+  Finished: 2026-03-26T11:31:13.924372Z
+  Model:    nvidia/nemotron-4-340b-instruct
+  Retries:  0
+
+======================================================================
+======================================================================
+TICKET SUMMARY: TICK-1007
+======================================================================
+
+## TICKET INFORMATION
+  Status:     COMPLETED
+  Outcome:    RESOLVED
+
+## CUSTOMER REQUEST
+  escalate the issue to a human
+
+## CONVERSATION HISTORY
+  [Initial Request]
+    escalate the issue to a human
+
+  [Agent Response]
+    Sure! To create the support ticket and hand it off to a human agent, I’ll need a few details from you:
+
+1. **Your email address** (the one on file with us)  
+2. **Order number** (if this issue is related to a specific order)  
+3. **Brief description of the issue** (1‑2 sentences)  
+4. **Steps you’ve already tried** to resolve it  
+5. **Urgency level**:  
+   - Critical (safety/fraud)  
+   - High (legal/financial)  
+   - Normal  
+
+Once I have that information I can log a ticket, note the steps already taken, and provide you with the ticket ID so you can track the progress. If the issue is urgent (e.g., fraud, safety, or legal), I’ll flag it for immediate human review.  
+
+Please share the details above, and I’ll get the ticket created right away.
+
+## KNOWLEDGE BASE ARTICLES USED
+  - KB-9.2: What should I do if I cannot resolve an issue?
+    Summary: If the issue requires capabilities beyond this agent's scope, follow these steps...
+  - KB-10.2: What information must I collect before escalating?
+    Summary: Before calling escalate_to_human, collect as much of the following as possible. ...
+  - KB-9.4: When should I create a support ticket?
+    Summary: Create a support ticket in these situations. The issue cannot be resolved in the...
+
+## PROCESSING DETAILS
+  Started:  2026-03-26T11:31:39.270167Z
+  Finished: 2026-03-26T11:31:41.665442Z
+  Model:    nvidia/nemotron-4-340b-instruct
+  Retries:  0
+
+======================================================================
+======================================================================
+TICKET SUMMARY: TICK-1008
+======================================================================
+
+## TICKET INFORMATION
+  Status:     COMPLETED
+  Outcome:    RESOLVED
+
+## CUSTOMER REQUEST
+  ok bye'
+
+## CONVERSATION HISTORY
+  [Initial Request]
+    ok bye'
+
+  [Agent Response]
+    You’re all set! If you ever need to address a missing “Delivered” package again, just:
+
+1. Check with neighbors or nearby spots (porches, side doors, mail room).  
+2. Wait 24 hours—carriers sometimes scan too early.  
+3. If it’s still missing, open a Lost Package Claim and let the carrier complete their 5‑day investigation before any replacement or refund is issued.  
+
+Have a great day!
+
+## KNOWLEDGE BASE ARTICLES USED
+  - KB-2.2: My package is marked as 'Delivered' but I haven't received it. What do I do?
+    Summary: Follow these steps to resolve missing 'Delivered' packages. Ask the customer to ...
+
+## PROCESSING DETAILS
+  Started:  2026-03-26T11:32:37.906565Z
+  Finished: 2026-03-26T11:32:43.362937Z
+  Model:    nvidia/nemotron-4-340b-instruct
   Retries:  0
 
 ======================================================================
