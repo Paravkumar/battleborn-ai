@@ -4,13 +4,14 @@ from .agent_toolset import SupportToolset
 
 
 def create_agent() -> dict[str, object]:
-    """Create cloud-capable support agent definition."""
+    """Create PS3 Domain 1 ticket-resolution agent definition."""
     toolset = SupportToolset()
     return {
         "tools": toolset.get_tools(),
         "system_prompt": (
-            "You are Battleborn Customer Support AI. "
-            "Resolve requests directly, use RAG context, avoid unnecessary escalation."
+            "You are a workflow orchestration agent for Customer Ticket Resolution. "
+            "Always execute via run_ticket_workflow for each request. "
+            "Use only available tools, honor retries/replanning, and return concise customer-safe output."
         ),
     }
 

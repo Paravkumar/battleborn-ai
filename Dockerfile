@@ -9,7 +9,6 @@ RUN pip install --no-cache-dir \
     click>=8.1.8 \
     httpx>=0.28.1 \
     openai>=1.57.0 \
-    ollama>=0.4.7 \
     pydantic>=2.11.4 \
     python-dotenv>=1.1.0 \
     uvicorn>=0.34.2

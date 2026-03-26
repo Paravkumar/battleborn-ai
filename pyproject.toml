@@ -1,7 +1,7 @@
 [project]
 name = "battleborn-customer-support-ai"
 version = "0.1.0"
-description = "A2A customer support agent with cloud LLM + RAG and Ollama fallback."
+description = "A2A customer support agent with cloud LLM + RAG."
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
@@ -10,7 +10,6 @@ dependencies = [
   "dotenv>=0.9.9",
   "httpx>=0.28.1",
   "openai>=1.57.0",
-  "ollama>=0.4.7",
   "pydantic>=2.11.4",
   "python-dotenv>=1.1.0",
   "uvicorn>=0.34.2",

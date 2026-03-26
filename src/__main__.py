@@ -24,20 +24,20 @@ def main(host: str, port: int):
         raise ValueError("OPENAI_API_KEY environment variable not set")
 
     skill = AgentSkill(
-        id="battleborn_support",
-        name="Battleborn Support",
-        description="Customer support and troubleshooting with RAG grounding.",
-        tags=["customer-support", "troubleshooting", "rag"],
+        id="customer_ticket_resolution",
+        name="Customer Ticket Resolution",
+        description="PS3 Domain 1 workflow orchestration with RAG, retries, and escalation.",
+        tags=["customer-support", "workflow", "orchestration", "rag", "escalation"],
         examples=[
-            "Guide me to set up my new device",
-            "I cannot log in after changing my email",
-            "How do I connect my product to bluetooth?",
+            "Customer says their earbuds are not pairing over bluetooth.",
+            "Customer reports duplicate posted charge and requests help.",
+            "Customer asks for delayed shipment resolution and next actions.",
         ],
     )
 
     agent_card = AgentCard(
         name="battleborn-customer-support-ai",
-        description="Cloud API + RAG customer support agent.",
+        description="PS3 Domain 1 Customer Ticket Resolution Agent.",
         url=f"http://{host}:{port}/",
         version="1.0.0",
         default_input_modes=["text"],

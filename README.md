@@ -1,10 +1,15 @@
 # Battleborn Customer Support AI (A2A Template)
 
-This project is a clean A2A-template implementation of a customer-support agent using:
+This project is a clean A2A-template implementation for **PS3 Domain 1: Customer Ticket Resolution** using:
 
 - Cloud LLM API (primary)
-- Fast Ollama instruct fallback model (`qwen2.5:7b-instruct`)
 - Lightweight RAG over local JSON knowledge base
+
+The workflow engine now enforces:
+- ordered tool plan (ticket_reader -> knowledge_base_query -> response_composer -> ticket_updater)
+- retries with modified arguments (max two retries)
+- escalation via `escalation_trigger` when a step cannot be completed
+- structured JSON execution log per run in `outputs/`
 
 ## Template Structure
 
@@ -27,8 +32,6 @@ This project is a clean A2A-template implementation of a customer-support agent 
 
 - `OPENAI_API_KEY` (required for cloud model)
 - `CLOUD_MODEL` (default: `gpt-4.1-mini`)
-- `OLLAMA_HOST` (default: `http://localhost:11434`)
-- `OLLAMA_MODEL` (default: `qwen2.5:7b-instruct`)
 - `KB_PATH` (default: `data/knowledge_base.json`)
 
 ## Run

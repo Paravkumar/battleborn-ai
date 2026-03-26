@@ -11,6 +11,5 @@ This repository is now aligned to the A2A template file layout.
 
 ## Model strategy
 
-- Primary: cloud API model (`gpt-4.1-mini` default for speed + quality).
-- Fallback: `qwen2.5:7b-instruct` in Ollama (fast, instruction-tunable).
+Cloud-only: `gpt-4.1-mini` (default for speed + quality).
 

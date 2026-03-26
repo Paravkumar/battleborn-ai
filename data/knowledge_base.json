@@ -1,0 +1,472 @@
+{
+  "company_name": "Aura Electronics",
+  "document_title": "Official Customer Support Knowledge Base",
+  "version": "3.0",
+  "last_updated": "2025-03-25",
+  "agent_instructions": {
+    "tone": "Professional, empathetic, and concise. Always acknowledge the customer's frustration before providing a solution.",
+    "response_format": "Use numbered steps for troubleshooting. Use bullet points for policy information. Keep responses under 200 words unless detailed steps are required.",
+    "escalation_rule": "If any escalation trigger is detected, STOP current conversation flow and call escalate_to_human immediately. Do not ask clarifying questions.",
+    "clarification_limit": "If you need information from the customer, ask ONE focused question per turn. Do not ask multiple questions at once.",
+    "knowledge_lookup": "Always call get_relevant_knowledge before providing policy-based answers to ensure accuracy.",
+    "ticket_creation": "Create a support ticket whenever the issue cannot be resolved in the current session or requires a follow-up action."
+  },
+  "categories": [
+    {
+      "category_name": "General Inquiries & Account Management",
+      "items": [
+        {
+          "id": "1.1",
+          "question": "How do I create an Aura Electronics account?",
+          "answer": "Customers can create an account by visiting our website and clicking 'Sign Up' in the top right corner. An account allows users to track orders, register warranties, and initiate returns. Guest checkout is available, but guest orders cannot be viewed in the online order history."
+        },
+        {
+          "id": "1.2",
+          "question": "How do I reset my password?",
+          "answer": "Click 'Forgot Password' on the login screen. A reset link will be sent to the registered email address. The link expires after 15 minutes. If the customer does not receive the email, advise them to check their spam folder and confirm the email address used at registration."
+        },
+        {
+          "id": "1.3",
+          "question": "Can I delete my account and data?",
+          "answer": "Yes. To comply with data privacy regulations (GDPR, CCPA), customers can request full account deletion by navigating to Account Settings > Privacy > Delete Account. Data deletion takes up to 30 days to fully process. Active orders must be completed or cancelled before deletion can proceed."
+        },
+        {
+          "id": "1.4",
+          "question": "Do you offer an educational or military discount?",
+          "answer": "We offer a 10% discount for active students and military personnel. Customers must verify their status using the VerifyMe portal at checkout. Discounts cannot be applied retroactively to completed orders."
+        },
+        {
+          "id": "1.5",
+          "question": "How do I change my email address or phone number on my account?",
+          "answer": "Customers can update their email or phone number under Account Settings > Personal Information. Changing the primary email requires re-verification. If the customer has lost access to their registered email, they must submit an ID verification request through our support portal."
+        },
+        {
+          "id": "1.6",
+          "question": "I see activity on my account that I don't recognize. What should I do?",
+          "answer": "Advise the customer to immediately change their password and enable two-factor authentication (2FA) under Account Settings > Security. Create a fraud report ticket and escalate to Tier 2 immediately. Do not share any order details with the user until identity is verified.",
+          "escalation_triggers": [
+            "Unauthorized account access suspected",
+            "Customer reports fraudulent purchase on their account"
+          ]
+        }
+      ]
+    },
+    {
+      "category_name": "Shipping, Delivery & Tracking SLAs",
+      "items": [
+        {
+          "id": "2.1",
+          "question": "What are your shipping options and timelines?",
+          "answer": "We offer three shipping tiers.",
+          "details": [
+            "Standard Shipping: 5-7 business days. Free on orders over $50. ($5.99 for orders under $50).",
+            "Expedited Shipping: 2-3 business days. Flat rate of $14.99.",
+            "Overnight Shipping: Next business day (if ordered before 2:00 PM EST). Flat rate of $29.99."
+          ]
+        },
+        {
+          "id": "2.2",
+          "question": "My package is marked as 'Delivered' but I haven't received it. What do I do?",
+          "answer": "Follow these steps to resolve missing 'Delivered' packages.",
+          "steps": [
+            "Ask the customer to check with neighbors and look around the delivery location (porches, side doors, mail room).",
+            "Wait 24 hours, as carriers sometimes prematurely scan packages.",
+            "If the package is still missing after 24 hours, initiate a 'Lost Package Claim'. Do not issue a refund or replacement until the carrier completes their 5-day investigation.",
+            "After the 5-day investigation, if the claim is confirmed, issue a full replacement at no charge."
+          ]
+        },
+        {
+          "id": "2.3",
+          "question": "Can I change my shipping address after placing an order?",
+          "answer": "Shipping addresses can only be modified within 1 hour of placing the order. Once an order status changes to 'Processing', the address cannot be changed. Customers must use the carrier's tracking portal to request a package redirect (fees may apply)."
+        },
+        {
+          "id": "2.4",
+          "question": "My order is delayed and past the estimated delivery date. What can I do?",
+          "answer": "If an order is delayed beyond its estimated delivery window, follow these steps.",
+          "steps": [
+            "Check the carrier's tracking page for the latest scan update.",
+            "If no tracking update in over 3 business days, create a 'Delayed Shipment' ticket.",
+            "Offer a $5 store credit as goodwill for delays on Standard Shipping.",
+            "For Overnight or Expedited orders delayed past SLA, offer a full refund of the shipping cost."
+          ]
+        },
+        {
+          "id": "2.5",
+          "question": "Do you ship to P.O. Boxes?",
+          "answer": "Standard Shipping is available for P.O. Boxes. Expedited and Overnight shipping options are not available for P.O. Box addresses due to carrier restrictions."
+        }
+      ]
+    },
+    {
+      "category_name": "Returns, Refunds & Exchanges",
+      "items": [
+        {
+          "id": "3.1",
+          "question": "What is the standard return policy?",
+          "answer": "Customers have 30 days from the date of delivery to return a product for a full refund. The item must be in its original packaging with all included accessories. Items returned outside the 30-day window are not eligible for a refund but may qualify for store credit at our discretion."
+        },
+        {
+          "id": "3.2",
+          "question": "Are there any restocking fees?",
+          "answer": "Restocking fees depend on the condition of the returned item.",
+          "details": [
+            "Unopened Items: No restocking fee.",
+            "Opened/Used Items: A 15% restocking fee will be deducted from the refund amount.",
+            "Defective Items: No restocking fee, regardless of whether the box is opened.",
+            "Final Sale Items: No returns or exchanges accepted."
+          ]
+        },
+        {
+          "id": "3.3",
+          "question": "How long do refunds take to process?",
+          "answer": "Once the return arrives at our warehouse, it takes 3-5 business days to inspect the item. After inspection, the refund is issued to the original payment method. It may take an additional 5-7 business days for the funds to appear in the customer's bank account."
+        },
+        {
+          "id": "3.4",
+          "question": "Can I exchange a product?",
+          "answer": "We do not offer direct exchanges. Customers must return the original item for a refund and place a new, separate order for the desired item. If the customer is worried about stock availability, create a note on the ticket and our team will prioritize their new order."
+        },
+        {
+          "id": "3.5",
+          "question": "How do I initiate a return?",
+          "steps": [
+            "Ask the customer to log into their account and go to Order History.",
+            "Select the order and click 'Request Return'.",
+            "Choose the reason for the return and submit.",
+            "A prepaid return shipping label will be sent to their registered email within 24 hours.",
+            "The customer must drop off the package at a designated carrier location within 14 days of receiving the label."
+          ]
+        },
+        {
+          "id": "3.6",
+          "question": "What items are non-returnable?",
+          "answer": "The following items cannot be returned.",
+          "details": [
+            "Items marked 'Final Sale'.",
+            "Digital products and software licenses once activated.",
+            "Hygiene items (e.g., in-ear tips packs) once the packaging is opened.",
+            "Gift cards."
+          ]
+        }
+      ]
+    },
+    {
+      "category_name": "Billing & Payments",
+      "items": [
+        {
+          "id": "4.1",
+          "question": "What payment methods do you accept?",
+          "answer": "We accept Visa, Mastercard, American Express, Discover, PayPal, Apple Pay, Google Pay, and Aura Store Credit. We do not accept cryptocurrency, checks, or money orders."
+        },
+        {
+          "id": "4.2",
+          "question": "Why was my payment declined?",
+          "answer": "A payment can be declined for several reasons.",
+          "details": [
+            "Insufficient funds or credit limit reached.",
+            "Billing address does not match the card's registered address.",
+            "The card issuer flagged the transaction as suspicious.",
+            "The CVC code entered was incorrect.",
+            "Advise the customer to contact their bank if our troubleshooting steps don't resolve the issue."
+          ]
+        },
+        {
+          "id": "4.3",
+          "question": "I was charged twice for the same order. What should I do?",
+          "answer": "A duplicate charge is usually a temporary authorization hold, not a true double charge. The secondary hold is typically released within 3-5 business days. If both charges appear as 'Posted' (not pending) on the customer's bank statement, create a billing dispute ticket and escalate to Tier 2 immediately.",
+          "escalation_triggers": [
+            "Confirmed duplicate posted charge"
+          ]
+        },
+        {
+          "id": "4.4",
+          "question": "Do you offer Buy Now, Pay Later (BNPL) options?",
+          "answer": "Yes. We partner with Affirm and Klarna for installment payment options on orders over $100. Availability depends on the customer's eligibility as determined by the BNPL provider. We cannot override BNPL approval decisions."
+        },
+        {
+          "id": "4.5",
+          "question": "How do I apply a promo code or store credit?",
+          "answer": "Promo codes and store credit can be applied on the cart or checkout page. Only one promo code can be applied per order. Store credit can be combined with a promo code. If a promo code is not working, verify it has not expired and that the order qualifies (minimum spend, eligible products)."
+        }
+      ]
+    },
+    {
+      "category_name": "Technical Support & Troubleshooting",
+      "items": [
+        {
+          "id": "5.1",
+          "question": "My AuraSync Wireless Earbuds will not pair via Bluetooth. What are the steps?",
+          "answer": "Walk the customer through these troubleshooting steps in order.",
+          "steps": [
+            "Forget Device: Have the user go to their phone's Bluetooth settings and 'Forget' the AuraSync Earbuds.",
+            "Charge: Ensure the earbuds and case are fully charged (solid green LED indicator).",
+            "Factory Reset: Place both earbuds in the case. Leave the lid open. Press and hold the button on the back of the case for 15 seconds until the LED flashes amber three times.",
+            "Re-pair: Close the lid, open it again, and attempt to pair with the device.",
+            "If still unresolved after these steps, proceed to warranty replacement."
+          ]
+        },
+        {
+          "id": "5.2",
+          "question": "My AuraGlow Smart Lamp keeps disconnecting from Wi-Fi.",
+          "answer": "The AuraGlow Lamp only supports 2.4GHz Wi-Fi networks. It will not connect to 5GHz networks. Advise the customer to check their router settings and ensure their phone is connected to the 2.4GHz band during the initial setup process. If the issue persists after confirming 2.4GHz, have them perform a factory reset by holding the power button for 10 seconds."
+        },
+        {
+          "id": "5.3",
+          "question": "The screen on my AuraTab Tablet is frozen and unresponsive.",
+          "answer": "Perform a hard reboot.",
+          "steps": [
+            "Press and hold the Power button and the Volume Down button simultaneously for 20 seconds.",
+            "The screen should go black, and the Aura logo will appear on restart.",
+            "If the device still does not restart, connect it to a charger and try again after 5 minutes.",
+            "If the screen is cracked or shows signs of physical damage, this is not covered under the standard warranty."
+          ]
+        },
+        {
+          "id": "5.4",
+          "question": "My AuraWatch health tracker is not syncing with the AuraFit app.",
+          "answer": "Walk the customer through these steps.",
+          "steps": [
+            "Ensure Bluetooth and Location permissions are enabled for the AuraFit app.",
+            "Force-close the app and reopen it.",
+            "Restart the AuraWatch by pressing the side button for 8 seconds.",
+            "If the watch has a pending firmware update, install it via the AuraFit app under Device Settings > Updates.",
+            "If sync still fails, unpair and re-pair the watch from the app."
+          ]
+        },
+        {
+          "id": "5.5",
+          "question": "My AuraSound Speaker produces crackling or distorted audio.",
+          "answer": "Diagnose and resolve audio distortion.",
+          "steps": [
+            "Check the audio source: test with a different song, streaming service, or audio cable.",
+            "Lower the volume to 50% to rule out speaker overload.",
+            "Reset the speaker by pressing and holding the power and mute buttons simultaneously for 5 seconds.",
+            "Update the firmware via the AuraSound companion app.",
+            "If the issue persists, the speaker may have a defective driver. Proceed to warranty claim."
+          ]
+        },
+        {
+          "id": "5.6",
+          "question": "My AuraCharge wireless charging pad is not charging my device.",
+          "answer": "Diagnose charging issues.",
+          "steps": [
+            "Ensure the phone case is not too thick (over 3mm) or made of metal, which can block wireless charging.",
+            "Try a different USB-C power adapter (minimum 18W recommended).",
+            "Clean the charging surface of the pad.",
+            "Try placing the phone in a different position on the pad.",
+            "If it still doesn't charge, test with a different Qi-compatible device to rule out a phone issue."
+          ]
+        }
+      ]
+    },
+    {
+      "category_name": "Product Catalog & Compatibility",
+      "items": [
+        {
+          "id": "6.1",
+          "question": "What are the key differences between AuraSync Basic and AuraSync Pro earbuds?",
+          "answer": "Feature comparison:",
+          "details": [
+            "AuraSync Basic: 6-hour battery (24-hour with case), IPX4 water resistance, standard active noise cancellation (ANC).",
+            "AuraSync Pro: 10-hour battery (40-hour with case), IPX6 water resistance, adaptive ANC with transparency mode, wireless charging case, multi-device pairing.",
+            "Both use the same Bluetooth 5.3 chip and codec support (AAC, SBC)."
+          ]
+        },
+        {
+          "id": "6.2",
+          "question": "Is my AuraSync compatible with Android and iPhone?",
+          "answer": "Yes. All AuraSync earbuds are compatible with any Bluetooth-enabled device. The AuraConnect companion app (for enhanced EQ and ANC controls) is available on both iOS (14+) and Android (10+)."
+        },
+        {
+          "id": "6.3",
+          "question": "What is the difference between AuraTab Lite, AuraTab, and AuraTab Pro?",
+          "answer": "AuraTab product line overview:",
+          "details": [
+            "AuraTab Lite: 10.1-inch display, 4GB RAM, 64GB storage, entry-level for media consumption.",
+            "AuraTab: 11-inch display, 8GB RAM, 128GB storage, supports stylus (AuraPen, sold separately).",
+            "AuraTab Pro: 12.9-inch OLED display, 12GB RAM, 256GB storage, supports AuraPen 2 and keyboard cover, intended for professional use."
+          ]
+        },
+        {
+          "id": "6.4",
+          "question": "Do Aura Electronics products work in countries outside the US?",
+          "answer": "Our electronics are designed for 100-240V, 50/60Hz and are compatible with international power standards with the appropriate plug adapter. AuraWatch requires the AuraFit app, which is available globally. Note: Warranty service is only available in the United States."
+        }
+      ]
+    },
+    {
+      "category_name": "Loyalty Program & Subscriptions",
+      "items": [
+        {
+          "id": "7.1",
+          "question": "What is the AuraRewards loyalty program?",
+          "answer": "AuraRewards allows customers to earn points on every purchase. Points tiers and conversion rates:",
+          "details": [
+            "Silver (0-499 points): 1 point per $1 spent.",
+            "Gold (500-1999 points): 1.5 points per $1 spent, free standard shipping on all orders.",
+            "Platinum (2000+ points): 2 points per $1 spent, free expedited shipping, priority customer support, 60-day return window."
+          ]
+        },
+        {
+          "id": "7.2",
+          "question": "How do I redeem my AuraRewards points?",
+          "answer": "Points can be redeemed at checkout. 100 points = $1 in store credit. A minimum of 500 points (equal to $5) is required to redeem. Points cannot be transferred between accounts or converted to cash."
+        },
+        {
+          "id": "7.3",
+          "question": "What is AuraCare+ and what does it include?",
+          "answer": "AuraCare+ is our premium subscription plan at $9.99/month or $89.99/year.",
+          "details": [
+            "Extends the standard 1-year warranty to 3 years on all registered devices.",
+            "Covers accidental damage (one claim per 12 months, $25 deductible).",
+            "Includes priority 24/7 customer support with guaranteed response within 2 hours.",
+            "15% discount on all future purchases.",
+            "Free extended return window (90 days)."
+          ]
+        },
+        {
+          "id": "7.4",
+          "question": "How do I cancel my AuraCare+ subscription?",
+          "answer": "Customers can cancel at any time under Account Settings > Subscriptions > AuraCare+. Cancellation takes effect at the end of the current billing period. No partial refunds are issued. If the customer cancels within 14 days of their initial subscription with no claims made, a full refund is available."
+        }
+      ]
+    },
+    {
+      "category_name": "Warranty & Repair Services",
+      "items": [
+        {
+          "id": "8.1",
+          "question": "What does the standard warranty cover?",
+          "answer": "All Aura Electronics products come with a 1-Year Limited Manufacturer's Warranty covering defects in materials and workmanship under normal use. AuraCare+ subscribers receive a 3-year warranty."
+        },
+        {
+          "id": "8.2",
+          "question": "What voids the warranty?",
+          "answer": "The warranty is strictly voided by the following.",
+          "details": [
+            "Physical damage (e.g., cracked screens, deep scratches not caused by a defect).",
+            "Water damage on non-IP68 rated products.",
+            "Evidence of unauthorized repair, tampering, or modification.",
+            "Damage caused by third-party accessories not certified by Aura Electronics."
+          ]
+        },
+        {
+          "id": "8.3",
+          "question": "How do I claim a warranty replacement?",
+          "steps": [
+            "Ask the customer to provide their original order number and a photo or video clearly demonstrating the defect.",
+            "Submit a warranty claim via the support portal or create a ticket on their behalf.",
+            "If approved, we will send a prepaid shipping label within 24-48 hours.",
+            "Upon receipt of the defective unit, a certified refurbished replacement is shipped within 5-7 business days.",
+            "If no certified refurbished unit is available, a brand-new unit of the same model will be issued."
+          ]
+        },
+        {
+          "id": "8.4",
+          "question": "Does Aura offer paid out-of-warranty repairs?",
+          "answer": "Yes. Customers can submit an out-of-warranty repair request. A $25 non-refundable diagnostic fee applies. After diagnosis, the customer will receive a repair estimate. If they decline the repair, the device is returned as-is. Typical out-of-warranty repair timelines are 10-14 business days."
+        }
+      ]
+    },
+    {
+      "category_name": "Agent Behavior & Response Policies",
+      "items": [
+        {
+          "id": "9.1",
+          "question": "How should I respond to a customer who is frustrated or upset?",
+          "answer": "Follow this de-escalation framework.",
+          "steps": [
+            "Acknowledge: 'I completely understand how frustrating this must be, and I sincerely apologize for the inconvenience.'",
+            "Empathize: Show the customer their feelings are valid without admitting fault.",
+            "Clarify: Ask one focused question to narrow down the problem.",
+            "Act: Provide a concrete solution or escalation path.",
+            "Never: Use phrases like 'calm down', 'that's not our policy', or 'there's nothing I can do.'"
+          ]
+        },
+        {
+          "id": "9.2",
+          "question": "What should I do if I cannot resolve an issue?",
+          "answer": "If the issue requires capabilities beyond this agent's scope, follow these steps.",
+          "steps": [
+            "Acknowledge that you are unable to fully resolve the issue in this session.",
+            "Create a detailed support ticket summarizing the issue, steps already tried, and the desired resolution.",
+            "Provide the customer with the ticket ID so they can track progress.",
+            "If the issue is urgent (safety, fraud, legal), escalate to human immediately."
+          ]
+        },
+        {
+          "id": "9.3",
+          "question": "How should I handle customers who ask for something outside our policies?",
+          "answer": "Be empathetic but firm. Never promise exceptions you cannot guarantee. If a customer requests a policy exception (e.g., return past 30 days, price match), acknowledge their request and create a ticket for Tier 2 review. Never unilaterally approve exceptions without Tier 2 authorization."
+        },
+        {
+          "id": "9.4",
+          "question": "When should I create a support ticket?",
+          "answer": "Create a support ticket in these situations.",
+          "details": [
+            "The issue cannot be resolved in the current session.",
+            "A physical replacement, refund, or investigation is required.",
+            "The customer is a Platinum AuraRewards member (priority handling).",
+            "Any case involving fraud, account security, or safety concerns.",
+            "The customer explicitly requests a follow-up from a human agent."
+          ]
+        }
+      ]
+    },
+    {
+      "category_name": "Escalation Protocols",
+      "items": [
+        {
+          "id": "10.1",
+          "question": "CRITICAL ESCALATION PROTOCOL (Internal Agent Rules)",
+          "answer": "The AI agent MUST immediately call the escalate_to_human tool under the following conditions. DO NOT ask clarifying questions. DO NOT attempt to resolve. Escalate first, then inform the customer.",
+          "escalation_triggers": [
+            "Customer uses abusive, threatening, or profane language.",
+            "Customer mentions legal action, lawsuits, lawyers, or attorneys.",
+            "Customer claims an Aura product caused PHYSICAL INJURY, fire, electric shock, or property damage.",
+            "Customer reports unauthorized account access or fraudulent charges.",
+            "Customer has been without a working device for more than 7 days due to our error.",
+            "The agent has asked 3 or more clarifying questions without resolving the issue.",
+            "Customer is a known Platinum AuraRewards member with a billing dispute.",
+            "Customer explicitly demands to speak to a human or manager."
+          ]
+        },
+        {
+          "id": "10.2",
+          "question": "What information must I collect before escalating?",
+          "answer": "Before calling escalate_to_human, collect as much of the following as possible.",
+          "details": [
+            "Customer email address (to locate their account).",
+            "Order number (if applicable).",
+            "Brief description of the issue (1-2 sentences).",
+            "Steps already attempted.",
+            "Urgency level: Critical (safety/fraud), High (legal/financial), Normal."
+          ]
+        },
+        {
+          "id": "10.3",
+          "question": "What should I tell the customer after escalating?",
+          "answer": "Use the following script after triggering an escalation.",
+          "steps": [
+            "Inform the customer: 'I've escalated your case to a specialist on our team who will be able to assist you further.'",
+            "For Critical/Safety: 'Given the nature of your concern, I've flagged this as urgent. A team member will contact you within 2 hours.'",
+            "For High: 'A specialist will follow up with you within 24 hours.'",
+            "For Normal: 'You can expect a response within 1-2 business days. Your ticket ID is [TICKET_ID].'",
+            "Do not promise specific outcomes or resolutions the Tier 2 team hasn't confirmed."
+          ]
+        },
+        {
+          "id": "10.4",
+          "question": "What is the difference between Tier 1 and Tier 2 support?",
+          "answer": "Support tiers and their responsibilities.",
+          "details": [
+            "Tier 1 (This Agent): Handles standard inquiries, troubleshooting, order status, return initiations, and knowledge-base-based questions.",
+            "Tier 2 (Human Specialist): Handles billing disputes, exceptions to policy, fraud and security, legal matters, safety complaints, complex warranty cases, and Platinum member issues.",
+            "Tier 3 (Engineering/Legal): Internal only, handles product safety recalls, serious legal threats, and engineering defects."
+          ]
+        }
+      ]
+    }
+  ]
+}
