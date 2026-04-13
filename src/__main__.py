@@ -9,7 +9,7 @@ from a2a.server.tasks import InMemoryTaskStore
 from a2a.types import AgentCapabilities, AgentCard, AgentSkill
 from dotenv import load_dotenv
 from starlette.requests import Request
-from starlette.responses import JSONResponse
+from starlette.responses import JSONResponse, HTMLResponse
 from starlette.routing import Route
 from .nvidia_agent import create_agent
 from .nvidia_agent_executor import NvidiaAgentExecutor
@@ -66,9 +66,19 @@ def main(host: str, port: int):
         result = await workflow_tool.run_ticket_workflow(message)
         return JSONResponse(result)
 
+    async def serve_ui(request: Request) -> HTMLResponse:
+        UI_FILE = os.path.join(os.path.dirname(__file__), "ui.html")
+        with open(UI_FILE, "r") as f:
+            html = f.read()
+        return HTMLResponse(content=html)
+
     request_handler = DefaultRequestHandler(agent_executor=agent_executor, task_store=InMemoryTaskStore())
     a2a_app = A2AStarletteApplication(agent_card=agent_card, http_handler=request_handler)
-    routes = [Route("/agent/message", endpoint=plain_message, methods=["POST"]), *a2a_app.routes()]
+    routes = [
+        Route("/ui", endpoint=serve_ui, methods=["GET"]),
+        Route("/agent/message", endpoint=plain_message, methods=["POST"]), 
+        *a2a_app.routes()
+    ]
     app = Starlette(routes=routes)
     uvicorn.run(app, host=host, port=port)
 

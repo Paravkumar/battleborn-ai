@@ -3,243 +3,306 @@ TICKET SUMMARY REPORT
 ======================================================================
 
 ## OVERVIEW
-  Total Tickets:     5
-  Resolved:          0 (0%)
-  Escalated:         5 (100%)
-  Awaiting Customer: 0
+  Total Tickets:     7
+  Resolved:          7 (100%)
+  Escalated:         0 (0%)
   Failed:            0
 
 ----------------------------------------------------------------------
+======================================================================
+TICKET SUMMARY: TICK-1000
+======================================================================
 
+## TICKET INFORMATION
+  Status:     COMPLETED
+  Outcome:    RESOLVED
+
+## CUSTOMER REQUEST
+  Customer says their earbuds are not pairing over bluetooth.
+
+## CONVERSATION HISTORY
+  [Initial Request]
+    Customer says their earbuds are not pairing over bluetooth.
+
+  [Agent Response]
+    **Troubleshooting steps (in order):**
+
+1. **Forget the device** – Open your phone’s Bluetooth settings and select “Forget” or “Remove” for the AuraSync Earbuds.  
+2. **Charge the earbuds** – Make sure both earbuds and the charging case are fully charged (solid green LED).  
+3. **Factory reset** –  
+   - Place both earbuds inside the case and keep the lid open.  
+   - Press and hold the button on the back of the case for **15 seconds** until the LED flashes amber three times.  
+4. **Re‑pair** – Close the case lid, open it again, and follow the normal pairing process with your phone.  
+
+If the earbuds still won’t pair after these steps, **escalate to a warranty replacement**.
+
+## KNOWLEDGE BASE ARTICLES USED
+  - KB-5.1: My AuraSync Wireless Earbuds will not pair via Bluetooth. What are the steps?
+    Summary: Walk the customer through these troubleshooting steps in order. Forget Device: H...
+  - KB-1.6: I see activity on my account that I don't recognize. What should I do?
+    Summary: Advise the customer to immediately change their password and enable two-factor a...
+  - KB-9.1: How should I respond to a customer who is frustrated or upset?
+    Summary: Follow this de-escalation framework. Acknowledge: 'I completely understand how f...
+
+## PROCESSING DETAILS
+  Started:  2026-03-26T13:08:35.338478Z
+  Finished: 2026-03-26T13:08:37.246492Z
+  Model:    nvidia/nemotron-4-340b-instruct
+  Retries:  0
+
+======================================================================
+======================================================================
+TICKET SUMMARY: TICK-1001
+======================================================================
+
+## TICKET INFORMATION
+  Status:     COMPLETED
+  Outcome:    RESOLVED
+
+## CUSTOMER REQUEST
+  my earbuds are not pairing over bluetooth please help
+
+## CONVERSATION HISTORY
+  [Initial Request]
+    my earbuds are not pairing over bluetooth please help
+
+  [Agent Response]
+    **Troubleshooting steps (in order)**  
+
+1. **Forget the earbuds** – Open your phone’s Bluetooth settings and “Forget” the AuraSync Earbuds.  
+2. **Charge fully** – Make sure both earbuds and the charging case are fully charged (solid green LED).  
+3. **Factory reset** –  
+   - Place both earbuds in the case and leave the lid open.  
+   - Press and hold the button on the back of the case for **15 seconds** until the LED flashes amber three times.  
+4. **Re‑pair** – Close the case lid, then open it again and attempt to pair the earbuds with your device.  
+
+If the earbuds still won’t pair after these steps, contact us for a warranty replacement.
+
+## KNOWLEDGE BASE ARTICLES USED
+  - KB-5.1: My AuraSync Wireless Earbuds will not pair via Bluetooth. What are the steps?
+    Summary: Walk the customer through these troubleshooting steps in order. Forget Device: H...
+  - KB-5.4: My AuraWatch health tracker is not syncing with the AuraFit app.
+    Summary: Walk the customer through these steps. Ensure Bluetooth and Location permissions...
+  - KB-6.1: What are the key differences between AuraSync Basic and AuraSync Pro earbuds?
+    Summary: Feature comparison: AuraSync Basic: 6-hour battery (24-hour with case), IPX4 wat...
+
+## PROCESSING DETAILS
+  Started:  2026-03-26T13:10:22.453595Z
+  Finished: 2026-03-26T13:10:26.260460Z
+  Model:    nvidia/nemotron-4-340b-instruct
+  Retries:  0
+
+======================================================================
 ======================================================================
 TICKET SUMMARY: TICK-1002
 ======================================================================
 
 ## TICKET INFORMATION
-  Subject:    bad product service
-  Priority:   HIGH
-  Issue Type: Not classified
-  Status:     ESCALATED
-  Outcome:    ESCALATED
-
-## CLASSIFICATION
-  Issue Type:  billing
-  Intent:      resolve_duplicate_charge
-  Confidence:  high (90%)
-  Priority:    high
+  Status:     COMPLETED
+  Outcome:    RESOLVED
 
 ## CUSTOMER REQUEST
-  i bought washing machine from you it is the worst quality what is the procudre for refund
+  its till not pairing and i am getting frustated
 
 ## CONVERSATION HISTORY
   [Initial Request]
-    i bought washing machine from you it is the worst quality what is the procudre for refund
+    its till not pairing and i am getting frustated
 
-  [Agent Response 1]
-    I'm escalating this to a billing specialist now for manual review. They'll continue from the details you already shared.
+  [Agent Response]
+    **Troubleshooting steps (do them in order):**
+
+1. **Forget the earbuds** – On your phone, go to Bluetooth settings and “Forget” AuraSync Earbuds.  
+2. **Charge fully** – Make sure both earbuds and the case have a solid‑green LED (fully charged).  
+3. **Factory reset** –  
+   - Place both earbuds in the case and keep the lid open.  
+   - Press & hold the button on the back of the case for **15 seconds** until the LED flashes amber three times.  
+4. **Re‑pair** – Close the case lid, open it again, then try pairing with your device.  
+
+If the earbuds still won’t pair after these steps, move on to a **warranty replacement**.
 
 ## KNOWLEDGE BASE ARTICLES USED
-  - KB-115: Handle subscription refund and cancellation requests
-    Type: policy | Confidence: 100%
-  - KB-110: Resolve duplicate invoice charges
-    Type: policy | Confidence: 74%
-  - KB-118: Cancel renewal at the end of the current period
-    Type: policy | Confidence: 51%
-
-## ESCALATION
-  Status: ESCALATED TO HUMAN SUPPORT
-  Reason for Escalation:
-    Escalation required. Classification: billing / resolve_duplicate_charge (0.90 confidence). Latest customer message: "i bought washing machine from you it is the worst quality what is the procudre for refund". Evidence reviewed: KB-115 matched refund; KB-110 matched refund; KB-118 matched service. KB attempts: "bad product service i bought washing machine from you it is the worst quality what is...
-  Escalation Summary: Escalation required. Classification: billing / resolve_duplicate_charge (0.90 confidence). Latest customer message: "i bought washing machine from you it is the worst quality what is the procudre for refund". Evidence reviewed: KB-115 matched refund; KB-110 matched refund; KB-118 matched service....
+  - KB-5.1: My AuraSync Wireless Earbuds will not pair via Bluetooth. What are the steps?
+    Summary: Walk the customer through these troubleshooting steps in order. Forget Device: H...
+  - KB-5.3: The screen on my AuraTab Tablet is frozen and unresponsive.
+    Summary: Perform a hard reboot. Press and hold the Power button and the Volume Down butto...
+  - KB-1.2: How do I reset my password?
+    Summary: Click 'Forgot Password' on the login screen. A reset link will be sent to the re...
 
 ## PROCESSING DETAILS
-  Started:  2026-03-26 05:14:49 UTC
-  Finished: 2026-03-26 05:14:52 UTC
-  Model:    llama3.1:8b
+  Started:  2026-03-26T13:10:40.453888Z
+  Finished: 2026-03-26T13:10:43.695530Z
+  Model:    nvidia/nemotron-4-340b-instruct
   Retries:  0
 
 ======================================================================
-
 ======================================================================
 TICKET SUMMARY: TICK-1003
 ======================================================================
 
 ## TICKET INFORMATION
-  Subject:    account hacked
-  Priority:   MEDIUM
-  Issue Type: access_management
-  Status:     ESCALATED
-  Outcome:    ESCALATED
-
-## CLASSIFICATION
-  Issue Type:  unknown
-  Intent:      unknown
-  Confidence:  low (20%)
-  Priority:    medium
+  Status:     COMPLETED
+  Outcome:    RESOLVED
 
 ## CUSTOMER REQUEST
-  i am not able to login into my account is it hacked???
+  not working , i am mentally stressed , angry , i want to a supervisor
 
 ## CONVERSATION HISTORY
   [Initial Request]
-    i am not able to login into my account is it hacked???
+    not working , i am mentally stressed , angry , i want to a supervisor
 
-  [Agent Response 1]
-    Thanks for the additional details. I'm escalating this to a human support specialist now and including the conversation history and the steps already attempted so they can continue from here.
+  [Agent Response]
+    **Quick steps to reset your password**
 
-## ESCALATION
-  Status: ESCALATED TO HUMAN SUPPORT
-  Reason for Escalation:
-    Escalation required. Classification: unknown / unknown (0.20 confidence). Latest customer message: "yes it is correct". KB attempts: "account hacked yes it is correct" -> No grounded KB article matched the query. | "unknown unknown account hacked" -> No grounded KB article matched the query. | "account hacked correct" -> No grounded KB article matched the query.. Escalation trigger: search_kb f...
-  Escalation Summary: Escalation required. Classification: unknown / unknown (0.20 confidence). Latest customer message: "yes it is correct". KB attempts: "account hacked yes it is correct" -> No grounded KB article matched the query. | "unknown unknown account hacked" -> No grounded KB article matched the query. | "a...
+1. **Go to the login screen** and click **“Forgot Password.”**  
+2. **Enter the email address** you used when you registered.  
+3. **Check your inbox** for a reset link (it arrives within a few minutes).  
+4. If you don’t see the email, **look in your spam/junk folder** and verify you typed the correct email address.  
+5. **Open the link** and follow the prompts to create a new password.  
+6. **Log in** with the new password.
+
+If the reset link still doesn’t work or you can’t locate the email, let us know and we’ll add a note to your ticket so our team can prioritize a resolution for you. (We’ll also keep an eye on any stock concerns you have.)  
+
+We’re here to help—please let us know once you’ve tried these steps or if you need further assistance.
+
+## KNOWLEDGE BASE ARTICLES USED
+  - KB-1.2: How do I reset my password?
+    Summary: Click 'Forgot Password' on the login screen. A reset link will be sent to the re...
+  - KB-3.4: Can I exchange a product?
+    Summary: We do not offer direct exchanges. Customers must return the original item for a ...
+  - KB-4.1: What payment methods do you accept?
+    Summary: We accept Visa, Mastercard, American Express, Discover, PayPal, Apple Pay, Googl...
 
 ## PROCESSING DETAILS
-  Started:  2026-03-26 05:16:51 UTC
-  Finished: 2026-03-26 05:16:51 UTC
-  Model:    llama3.1:8b
-  Retries:  2
+  Started:  2026-03-26T13:11:11.602408Z
+  Finished: 2026-03-26T13:11:13.608483Z
+  Model:    nvidia/nemotron-4-340b-instruct
+  Retries:  0
 
 ======================================================================
-
 ======================================================================
 TICKET SUMMARY: TICK-1004
 ======================================================================
 
 ## TICKET INFORMATION
-  Subject:    Unable to log into account
-  Priority:   LOW
-  Issue Type: Not classified
-  Status:     ESCALATED
-  Outcome:    ESCALATED
-
-## CLASSIFICATION
-  Issue Type:  unknown
-  Intent:      unknown
-  Confidence:  low (20%)
-  Priority:    low
+  Status:     COMPLETED
+  Outcome:    RESOLVED
 
 ## CUSTOMER REQUEST
-  i left my account 2 years ago now when i am trying to log in i cant
+  please connect ahuman resource as soon as possible
 
 ## CONVERSATION HISTORY
   [Initial Request]
-    i left my account 2 years ago now when i am trying to log in i cant
+    please connect ahuman resource as soon as possible
 
-  [Agent Response 1]
-    I'm escalating this to a human support specialist now because this needs hands-on review beyond the supported automated steps. They'll continue from the details already captured in this ticket.
+  [Agent Response]
+    Sure, I can connect you with a human support specialist right away. To do that I’ll need a few quick details:
+
+1. **Your email address** (the one linked to your AuraSync account)  
+2. **Order number** (if you have one)  
+3. **Brief description of the issue** (1‑2 sentences)  
+4. **Steps you’ve already tried** (e.g., reset, app reinstall, etc.)  
+5. **Urgency level** – Critical (safety/fraud), High (legal/financial), or Normal  
+
+Once I have that information I’ll immediately route you to a human agent. Please provide the details above, and I’ll take care of the escalation for you.
 
 ## KNOWLEDGE BASE ARTICLES USED
-  - KB-101: Recover MFA access after device loss
-    Type: policy | Confidence: 62%
-
-## ESCALATION
-  Status: ESCALATED TO HUMAN SUPPORT
-  Reason for Escalation:
-    Escalation required. Classification: unknown / unknown (0.20 confidence). Latest customer message: "i left my account 2 years ago now when i am trying to log in i cant". Evidence reviewed: KB-101 matched account, when. KB attempts: "Unable to log into account i left my account 2 years ago now when i am trying to log in i cant" -> Retrieved 1 KB article(s).. Draft assessment: "To regain access t...
-  Escalation Summary: Escalation required. Classification: unknown / unknown (0.20 confidence). Latest customer message: "i left my account 2 years ago now when i am trying to log in i cant". Evidence reviewed: KB-101 matched account, when. KB attempts: "Unable to log into account i left my account 2 years ago now whe...
+  - KB-6.2: Is my AuraSync compatible with Android and iPhone?
+    Summary: Yes. All AuraSync earbuds are compatible with any Bluetooth-enabled device. The ...
+  - KB-10.2: What information must I collect before escalating?
+    Summary: Before calling escalate_to_human, collect as much of the following as possible. ...
+  - KB-1.2: How do I reset my password?
+    Summary: Click 'Forgot Password' on the login screen. A reset link will be sent to the re...
 
 ## PROCESSING DETAILS
-  Started:  2026-03-26 05:18:52 UTC
-  Finished: 2026-03-26 05:18:57 UTC
-  Model:    llama3.1:8b
+  Started:  2026-03-26T13:11:37.647987Z
+  Finished: 2026-03-26T13:11:39.411891Z
+  Model:    nvidia/nemotron-4-340b-instruct
   Retries:  0
 
 ======================================================================
-
 ======================================================================
 TICKET SUMMARY: TICK-1005
 ======================================================================
 
 ## TICKET INFORMATION
-  Subject:    To know the refund status of my ongoing refund request
-  Priority:   MEDIUM
-  Issue Type: billing
-  Status:     ESCALATED
-  Outcome:    ESCALATED
-
-## CLASSIFICATION
-  Issue Type:  billing
-  Intent:      request_subscription_refund
-  Confidence:  high (90%)
-  Priority:    medium
+  Status:     COMPLETED
+  Outcome:    RESOLVED
 
 ## CUSTOMER REQUEST
-  I want to know when will my refund be recieved by me , it was process yesterday...
+  cook food for me i am hungry
 
 ## CONVERSATION HISTORY
   [Initial Request]
-    I want to know when will my refund be recieved by me , it was process yesterday...
+    cook food for me i am hungry
 
-  [Agent Response 1]
-    Thanks for the additional details. I'm escalating this to a billing specialist now and including the conversation history and the steps already attempted so they can continue from here.
+  [Agent Response]
+    I’m sorry, but I’m not able to help with that request.
 
 ## KNOWLEDGE BASE ARTICLES USED
-  - KB-115: Handle subscription refund and cancellation requests
-    Type: policy | Confidence: 100%
-  - KB-110: Resolve duplicate invoice charges
-    Type: policy | Confidence: 74%
-  - KB-114: Send invoice or receipt copies
-    Type: policy | Confidence: 51%
-
-## ESCALATION
-  Status: ESCALATED TO HUMAN SUPPORT
-  Reason for Escalation:
-    Escalation required. Classification: billing / request_subscription_refund (0.90 confidence). Latest customer message: "email - xyz@gmail.com". Evidence reviewed: KB-115 matched email, refund, request; KB-110 matched refund; KB-114 matched email. KB attempts: "To know the refund status of my ongoing refund request email - xyz@gmail.com" -> Retrieved 3 KB article(s).. Draft assessment: "Thanks f...
-  Escalation Summary: Escalation required. Classification: billing / request_subscription_refund (0.90 confidence). Latest customer message: "email - xyz@gmail.com". Evidence reviewed: KB-115 matched email, refund, request; KB-110 matched refund; KB-114 matched email. KB attempts: "To know the refund status of my ongo...
+  - KB-1.2: How do I reset my password?
+    Summary: Click 'Forgot Password' on the login screen. A reset link will be sent to the re...
+  - KB-3.4: Can I exchange a product?
+    Summary: We do not offer direct exchanges. Customers must return the original item for a ...
+  - KB-4.3: I was charged twice for the same order. What should I do?
+    Summary: A duplicate charge is usually a temporary authorization hold, not a true double ...
 
 ## PROCESSING DETAILS
-  Started:  2026-03-26 05:52:30 UTC
-  Finished: 2026-03-26 05:52:38 UTC
-  Model:    llama3.1:8b
+  Started:  2026-03-26T13:13:35.637195Z
+  Finished: 2026-03-26T13:13:37.680591Z
+  Model:    nvidia/nemotron-4-340b-instruct
   Retries:  0
 
 ======================================================================
-
 ======================================================================
 TICKET SUMMARY: TICK-1006
 ======================================================================
 
 ## TICKET INFORMATION
-  Subject:    Washing machine not working
-  Priority:   MEDIUM
-  Issue Type: billing
-  Status:     ESCALATED
-  Outcome:    ESCALATED
-
-## CLASSIFICATION
-  Issue Type:  billing
-  Intent:      request_subscription_refund
-  Confidence:  high (90%)
-  Priority:    high
+  Status:     COMPLETED
+  Outcome:    RESOLVED
 
 ## CUSTOMER REQUEST
-  I just bought your latest washing machine , and today its not working , what should i do ?
+  drink water
 
 ## CONVERSATION HISTORY
   [Initial Request]
-    I just bought your latest washing machine , and today its not working , what should i do ?
+    drink water
 
-  [Agent Response 1]
-    Thanks for the additional details. I'm escalating this to a billing specialist now and including the conversation history and the steps already attempted so they can continue from here.
+  [Agent Response]
+    **Practical steps for using your AuraSync earbuds while drinking water**
+
+1. **Check the rating**  
+   - *AuraSync Basic*: **IPX4** – protects against splashes and light rain.  
+   - *AuraSync Pro*: **IPX6** – protects against stronger water jets (e.g., heavy rain, sweat‑intense workouts).
+
+2. **Stay within the rating**  
+   - For IPX4, avoid submerging the earbuds or exposing them to direct streams of water (e.g., shower, pool).  
+   - For IPX6, you can tolerate brief exposure to higher‑pressure water (e.g., sweaty workouts), but still avoid full immersion.
+
+3. **Use a secure fit**  
+   - Ensure the earbuds stay in place so water doesn’t force its way into the speaker mesh.
+
+4. **Dry them promptly**  
+   - After exposure to water, wipe the exterior with a soft, dry cloth and let the earbuds air‑dry before storing them in the case.
+
+5. **Avoid high‑pressure sources**  
+   - Do not point high‑pressure water (e.g., from a faucet or hose) directly at the earbuds, even on the IPX6 model.
+
+6. **Know the warranty limits**  
+   - Water damage is covered **only** if it stays within the stated IP rating. Damage from submersion beyond IPX4/IPX6, or from non‑certified accessories, voids the warranty.
+
+Follow these steps to enjoy your earbuds while staying hydrated without risking damage or voiding the warranty.
 
 ## KNOWLEDGE BASE ARTICLES USED
-  - KB-115: Handle subscription refund and cancellation requests
-    Type: policy | Confidence: 100%
-  - KB-110: Resolve duplicate invoice charges
-    Type: policy | Confidence: 74%
-  - KB-112: Update VAT, tax ID, or billing profile details
-    Type: policy | Confidence: 89%
-
-## ESCALATION
-  Status: ESCALATED TO HUMAN SUPPORT
-  Reason for Escalation:
-    Escalation required. Classification: billing / request_subscription_refund (0.90 confidence). Latest customer message: "i want a refund , of order id XXXX". Evidence reviewed: KB-115 matched id, order, refund; KB-110 matched refund; KB-112 matched id. KB attempts: "Washing machine not working i want a refund , of order id XXXX" -> Retrieved 3 KB article(s).. Draft assessment: "Thanks for the up...
-  Escalation Summary: Escalation required. Classification: billing / request_subscription_refund (0.90 confidence). Latest customer message: "i want a refund , of order id XXXX". Evidence reviewed: KB-115 matched id, order, refund; KB-110 matched refund; KB-112 matched id. KB attempts: "Washing machine not working i w...
+  - KB-6.1: What are the key differences between AuraSync Basic and AuraSync Pro earbuds?
+    Summary: Feature comparison: AuraSync Basic: 6-hour battery (24-hour with case), IPX4 wat...
+  - KB-8.2: What voids the warranty?
+    Summary: The warranty is strictly voided by the following. Physical damage (e.g., cracked...
 
 ## PROCESSING DETAILS
-  Started:  2026-03-26 06:04:52 UTC
-  Finished: 2026-03-26 06:05:04 UTC
-  Model:    llama3.1:8b
+  Started:  2026-03-26T13:13:46.246068Z
+  Finished: 2026-03-26T13:13:48.951097Z
+  Model:    nvidia/nemotron-4-340b-instruct
   Retries:  0
 
 ======================================================================
